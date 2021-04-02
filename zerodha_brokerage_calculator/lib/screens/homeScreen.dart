@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                                 viewportFraction: 0.8,
                                 scrollDirection: Axis.horizontal,
                                 enableInfiniteScroll: false,
-                                disableCenter: false,
+                                disableCenter: true,
                                 autoPlay: false,),
                               items: item
                           ),
