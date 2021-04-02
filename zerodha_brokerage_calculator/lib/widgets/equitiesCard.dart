@@ -148,6 +148,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnTotalTax(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.totalTaxes(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.totalTaxes(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.totalTaxes(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.totalTaxes(buy, sell, quantity);
+      default:
+        return IntraDayEquity.totalTaxes(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -363,7 +378,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Total Tax",
-                    value: 203.82,
+                    value: returnTotalTax(),
                   ),
                   TextCards(
                     name: "Points to breakeven",
