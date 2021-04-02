@@ -103,6 +103,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnGST(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.gst(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.gst(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.gst(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.gst(buy, sell, quantity);
+      default:
+        return IntraDayEquity.gst(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -306,7 +321,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "GST",
-                    value: 12.42,
+                    value: returnGST(),
                   ),
                   TextCards(
                     name: "SEBI charges",
