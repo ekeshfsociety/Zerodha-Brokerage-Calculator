@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
 import 'package:zerodha_brokerage_calculator/colors.dart';
 
 import 'displayText.dart';
@@ -17,8 +21,59 @@ class _EquitiesState extends State<Equities> {
   TextEditingController _buy = new TextEditingController(text: "1000");
   TextEditingController _sell = new TextEditingController(text: "1100");
   TextEditingController _quantity = new TextEditingController(text: "400");
+  int index=0;
+  List functions = [IntraDayEquity,DeliveryEquity,FuturesEquity,OptionsEquity];
   int _sliding = 0;
+  double buy;
+  double sell;
+  int quantity;
 
+  double returnTurnOver(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.turnover(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.turnover(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.turnover(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.turnover(buy, sell, quantity);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    switch(widget.name){
+      case "Intraday Equity":
+        index = 0;
+        break;
+      case "Delivery Equity":
+        index = 1;
+        break;
+      case "F&O - Futures":
+        index = 2;
+        break;
+      case "F&O - Options":
+        index = 3;
+        break;
+    }
+    _buy.addListener(() {
+      setState(() {
+        buy = double.parse(_buy.text.isEmpty ? "0" : _buy.text);
+      });
+    });
+    _sell.addListener(() {
+        setState(() {
+          sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
+        });
+    });
+    _quantity.addListener(() {
+      setState(() {
+        quantity = int.parse(_quantity.text.isEmpty ? "0" : _quantity.text);
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(
@@ -169,7 +224,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Turnover",
-                    value: 8400000,
+                    value: returnTurnOver()
                   ),
                   TextCards(
                     name: "Brokerage",
