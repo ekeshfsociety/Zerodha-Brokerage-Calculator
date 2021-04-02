@@ -73,6 +73,22 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnTxnCharge(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.transactionCharges(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.transactionCharges(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.transactionCharges(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.transactionCharges(buy, sell, quantity);
+      default:
+        return IntraDayEquity.transactionCharges(buy, sell, quantity);
+    }
+  }
+
+
   @override
   void initState() {
     super.initState();
@@ -268,7 +284,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Exchange txn charge",
-                    value: 28.98,
+                    value: returnTxnCharge(),
                   ),
                   TextCards(
                     name: "Clearing charge",
