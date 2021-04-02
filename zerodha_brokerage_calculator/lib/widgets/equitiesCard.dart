@@ -88,6 +88,20 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnClearCharge(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.ClearingCharge();
+      case 1:
+        return DeliveryEquity.ClearingCharge();
+      case 2:
+        return FuturesEquity.ClearingCharge();
+      case 3:
+        return OptionsEquity.ClearingCharge();
+      default:
+        return IntraDayEquity.ClearingCharge();
+    }
+  }
 
   @override
   void initState() {
@@ -288,7 +302,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Clearing charge",
-                    value: 0,
+                    value: returnClearCharge(),
                   ),
                   TextCards(
                     name: "GST",
