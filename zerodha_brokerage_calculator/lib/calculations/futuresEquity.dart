@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class FuturesEquity {
   double buy;
   double sell;
   int quantity;
@@ -6,7 +6,7 @@ class IntraDayEquity {
   double broke;
   double transac;
 
-  IntraDayEquity(
+  FuturesEquity(
     this.buy,
     this.sell,
     this.quantity,
@@ -24,13 +24,12 @@ class IntraDayEquity {
   }
 
   double stt() {
-    turn = turnover();
-    return (0.00025 * sell * quantity);
+    return (sell * quantity * 0.0001);
   }
 
   double transactionCharges() {
     turn = turnover();
-    return (0.0000345 * turn);
+    return (0.00002 * turn);
   }
 
   double ClearingCharge() {
@@ -49,7 +48,7 @@ class IntraDayEquity {
   }
 
   double stampCharges() {
-    return (0.00003 * buy * quantity);
+    return (0.00002 * buy * quantity);
   }
 
   double totalTaxes() {

@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class DeliveryEquity {
   double buy;
   double sell;
   int quantity;
@@ -6,7 +6,7 @@ class IntraDayEquity {
   double broke;
   double transac;
 
-  IntraDayEquity(
+  DeliveryEquity(
     this.buy,
     this.sell,
     this.quantity,
@@ -17,15 +17,12 @@ class IntraDayEquity {
   }
 
   double brokerage() {
-    double result = 0;
-    result += (buy * quantity * 0.0003 > 20) ? 20 : (buy * quantity * 0.0003);
-    result += (sell * quantity * 0.0003 > 20) ? 20 : (sell * quantity * 0.0003);
-    return result;
+    return 0;
   }
 
   double stt() {
     turn = turnover();
-    return (0.00025 * sell * quantity);
+    return (0.001 * turn);
   }
 
   double transactionCharges() {
@@ -49,7 +46,7 @@ class IntraDayEquity {
   }
 
   double stampCharges() {
-    return (0.00003 * buy * quantity);
+    return (0.00015 * buy * quantity);
   }
 
   double totalTaxes() {

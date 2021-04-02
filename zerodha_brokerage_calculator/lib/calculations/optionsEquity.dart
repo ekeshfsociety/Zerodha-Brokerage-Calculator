@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class OptionsEquity {
   double buy;
   double sell;
   int quantity;
@@ -6,7 +6,7 @@ class IntraDayEquity {
   double broke;
   double transac;
 
-  IntraDayEquity(
+  OptionsEquity(
     this.buy,
     this.sell,
     this.quantity,
@@ -17,20 +17,16 @@ class IntraDayEquity {
   }
 
   double brokerage() {
-    double result = 0;
-    result += (buy * quantity * 0.0003 > 20) ? 20 : (buy * quantity * 0.0003);
-    result += (sell * quantity * 0.0003 > 20) ? 20 : (sell * quantity * 0.0003);
-    return result;
+    return 40;
   }
 
   double stt() {
-    turn = turnover();
-    return (0.00025 * sell * quantity);
+    return (sell * quantity * 0.0005);
   }
 
   double transactionCharges() {
     turn = turnover();
-    return (0.0000345 * turn);
+    return (0.00053 * turn);
   }
 
   double ClearingCharge() {
