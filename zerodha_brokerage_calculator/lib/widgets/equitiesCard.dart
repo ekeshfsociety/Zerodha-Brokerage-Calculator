@@ -38,6 +38,23 @@ class _EquitiesState extends State<Equities> {
         return FuturesEquity.turnover(buy, sell, quantity);
       case 3:
         return OptionsEquity.turnover(buy, sell, quantity);
+      default:
+        return IntraDayEquity.turnover(buy, sell, quantity);
+    }
+  }
+
+  double returnBrokerage(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.brokerage(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.brokerage();
+      case 2:
+        return FuturesEquity.brokerage(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.brokerage();
+      default:
+        return IntraDayEquity.brokerage(buy, sell, quantity);
     }
   }
 
@@ -228,7 +245,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Brokerage",
-                    value: 40,
+                    value: returnBrokerage(),
                   ),
                   TextCards(
                     name: "STT Total",
