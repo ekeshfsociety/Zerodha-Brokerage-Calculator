@@ -133,6 +133,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnStamp(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.stampCharges(buy, quantity);
+      case 1:
+        return DeliveryEquity.stampCharges(buy,sell,quantity);
+      case 2:
+        return FuturesEquity.stampCharges(buy, quantity);
+      case 3:
+        return OptionsEquity.stampCharges(buy, quantity);
+      default:
+        return IntraDayEquity.stampCharges(buy, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -344,7 +359,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Stamp Duty",
-                    value: 12,
+                    value: returnStamp(),
                   ),
                   TextCards(
                     name: "Total Tax",
