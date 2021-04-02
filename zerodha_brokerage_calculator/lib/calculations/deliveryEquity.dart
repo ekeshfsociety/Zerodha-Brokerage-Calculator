@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class DeliveryEquity {
   double buy;
   double sell;
   int quantity;
@@ -6,7 +6,7 @@ class IntraDayEquity {
   double broke;
   double transac;
 
-  IntraDayEquity(
+  DeliveryEquity(
     this.buy,
     this.sell,
     this.quantity,

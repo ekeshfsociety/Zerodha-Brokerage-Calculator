@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class FuturesCurrency {
   double buy;
   double sell;
   int quantity;
@@ -7,7 +7,7 @@ class IntraDayEquity {
   double transac;
   bool nse;
 
-  IntraDayEquity(this.buy, this.sell, this.quantity, this.nse);
+  FuturesCurrency(this.buy, this.sell, this.quantity, this.nse);
 
   double turnover() {
     return (((buy * quantity) + (sell * quantity)) * 1000);

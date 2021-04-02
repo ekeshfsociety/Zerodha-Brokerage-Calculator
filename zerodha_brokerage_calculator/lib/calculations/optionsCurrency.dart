@@ -1,4 +1,4 @@
-class IntraDayEquity {
+class OptionsCurrency {
   double strikePrice;
   double buy;
   double sell;
@@ -8,7 +8,7 @@ class IntraDayEquity {
   double transac;
   bool nse;
 
-  IntraDayEquity(
+  OptionsCurrency(
       this.strikePrice, this.buy, this.sell, this.quantity, this.nse);
 
   double turnover() {

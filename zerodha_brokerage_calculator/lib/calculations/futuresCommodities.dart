@@ -1,16 +1,20 @@
-class IntraDayEquity {
+import 'package:zerodha_brokerage_calculator/globals.dart';
+
+class FuturesCommodities {
+  String commodity;
   double buy;
   double sell;
   int quantity;
   double turn;
   double broke;
   double transac;
-  bool nse;
 
-  IntraDayEquity(this.buy, this.sell, this.quantity, this.nse);
+  FuturesCommodities(this.commodity, this.buy, this.sell, this.quantity);
 
   double turnover() {
-    return (((buy * quantity) + (sell * quantity)) * 1000);
+    String value = commodityMultiplierMap[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    return ((buy + sell) * multiplier * quantity);
   }
 
   double brokerage() {
@@ -25,16 +29,25 @@ class IntraDayEquity {
     return result;
   }
 
-  double stt() {
-    return 0;
+  double ctt() {
+    double result = 0;
+    String value = commodityMultiplierMap[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    String newValue = value.substring(value.length - 1);
+    if (newValue == 'a') {
+      result = (0.0001 * sell * quantity * multiplier);
+    }
+    return result;
   }
 
   double transactionCharges() {
     turn = turnover();
-    double nseCharge = (0.000009 * turn);
-    double bseCharge = (0.0000022 * turn);
+    double categoryA = (0.000026 * turn);
+    double categoryB = (0.0000005 * turn);
     double trans;
-    (nse) ? (trans = nseCharge) : (trans = bseCharge);
+    String value = commodityMultiplierMap[commodity];
+    String newValue = value.substring(value.length - 1);
+    (newValue == 'a') ? (trans = categoryA) : (trans = categoryB);
     return trans;
   }
 
@@ -46,10 +59,20 @@ class IntraDayEquity {
 
   double sebiCharges() {
     turn = turnover();
-    return (0.0000005 * turn);
+    double sebiTax;
+    String value = commodityGroupMap[commodity];
+    String newValue = value.substring(value.length - 1);
+    (newValue == 'a')
+        ? (sebiTax = turn * 0.0000001)
+        : (sebiTax = turn * 0.0000005);
+    return sebiTax;
   }
 
   double stampCharges() {
-    return (0.000001 * buy * quantity * 1000);
+    String value = commodityMultiplierMap[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    double result;
+    result = buy * quantity * multiplier * 0.00002;
+    return result;
   }
 }
