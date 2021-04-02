@@ -178,6 +178,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnPL(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.netProfit(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.netProfit(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.netProfit(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.netProfit(buy, sell, quantity);
+      default:
+        return IntraDayEquity.netProfit(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -410,9 +425,9 @@ class _EquitiesState extends State<Equities> {
                               TextStyle(color: Colors.white, fontSize: sy(18)),
                         ),
                         Text(
-                          "39796.18",
+                          returnPL().toString(),
                           style: TextStyle(
-                              color: Colors.greenAccent, fontSize: sy(18)),
+                              color: returnPL() >=0 ? Colors.greenAccent : Colors.redAccent, fontSize: sy(18)),
                         ),
                       ],
                     ),
