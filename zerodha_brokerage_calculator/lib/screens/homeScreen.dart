@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> itemList = List.generate(
       3,
       (index) => Container(
-            color: Colors.white,
+            color: Color(0xff001D3D),
             child: Center(
               child: Text((index + 1).toString()),
             ),
@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff000814),
         body: SafeArea(
           child: Stack(
             children: [
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Container(
-                      height: sy(125),
+                      height: sy(50),
                       width: double.infinity,
                       child: CarouselSlider(
                         options: CarouselOptions(
@@ -71,6 +71,18 @@ class _HomePageState extends State<HomePage> {
                             selected: _currentIndex == 2,
                           ),
                         ],
+                      ),
+                    ),Container(
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                            aspectRatio: 2.0,
+                            enlargeCenterPage: true,
+                            viewportFraction: 0.8,
+                            scrollDirection: Axis.horizontal,
+                            enableInfiniteScroll: false,
+                            disableCenter: false,
+                            autoPlay: false,),
+                        items: itemList
                       ),
                     )
                   ],
