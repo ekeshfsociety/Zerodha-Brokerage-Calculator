@@ -196,6 +196,9 @@ class _EquitiesState extends State<Equities> {
   @override
   void initState() {
     super.initState();
+    buy = double.parse(_buy.text);
+    sell = double.parse(_sell.text);
+    quantity = int.parse(_quantity.text);
     switch(widget.name){
       case "Intraday Equity":
         index = 0;
