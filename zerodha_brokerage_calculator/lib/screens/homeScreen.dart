@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:zerodha_brokerage_calculator/widgets/equitiesCard.dart';
 import '../widgets/titles.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ));
 
+  List<Widget> item = [Equities(key:Key("1"),name:"Intraday Equity"),Equities(key:Key("2"),name:"Delivery Equity"),Equities(key:Key("3"),name:"F&O - Futures"),Equities(key:Key("4"),name:"F&O - Options")];
   @override
   void dispose() {
     super.dispose();
@@ -72,19 +74,21 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-                    ),Container(
+                    ),Padding(
+                      padding:EdgeInsets.only(top: sy(10)),
+                    child:Container(
                       child: CarouselSlider(
-                        options: CarouselOptions(
-                            aspectRatio: 2.0,
+                          options: CarouselOptions(
+                            height: sy(350),
                             enlargeCenterPage: true,
                             viewportFraction: 0.8,
                             scrollDirection: Axis.horizontal,
                             enableInfiniteScroll: false,
                             disableCenter: false,
                             autoPlay: false,),
-                        items: itemList
+                          items: item
                       ),
-                    )
+                    ) ,)
                   ],
                 ),
               ),
