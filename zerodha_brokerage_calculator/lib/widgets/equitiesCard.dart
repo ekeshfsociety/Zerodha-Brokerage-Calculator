@@ -163,6 +163,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnBreakeven(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.breakeven(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.breakeven(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.breakeven(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.breakeven(buy, sell, quantity);
+      default:
+        return IntraDayEquity.breakeven(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -382,7 +397,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Points to breakeven",
-                    value: 0.51,
+                    value: returnBreakeven(),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: sx(20)),
