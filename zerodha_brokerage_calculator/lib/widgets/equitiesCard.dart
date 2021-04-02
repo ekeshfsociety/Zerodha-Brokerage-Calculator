@@ -58,6 +58,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnSTT(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.stt(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.stt(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.stt(sell, quantity);
+      case 3:
+        return OptionsEquity.stt(sell, quantity);
+      default:
+        return IntraDayEquity.stt(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -249,7 +264,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "STT Total",
-                    value: 110,
+                    value: returnSTT(),
                   ),
                   TextCards(
                     name: "Exchange txn charge",
