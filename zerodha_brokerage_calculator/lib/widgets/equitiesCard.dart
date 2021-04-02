@@ -123,11 +123,81 @@ class _EquitiesState extends State<Equities> {
                           _sliding = newValue;
                         });
                       }),
-                  SizedBox(
-                    height: sy(100),
-                  )
+                  SizedBox(height: sy(10),),
+                  TextCards(name:"Turnover",value: 8400000,),
+                  TextCards(name: "Brokerage",value: 40,),
+                  TextCards(name: "STT Total",value: 110,),
+                  TextCards(name: "Exchange txn charge",value: 28.98,),
+                  TextCards(name: "Clearing charge",value: 0,),
+                  TextCards(name: "GST",value: 12.42,),
+                  TextCards(name: "SEBI charges",value: 0.42,),
+                  TextCards(name: "Stamp Duty",value: 12,),
+                  TextCards(name: "Total Tax", value: 203.82,),
+                  TextCards(name: "Points to breakeven",value: 0.51,),
+                  Padding(padding: EdgeInsets.symmetric(horizontal: sx(20)) ,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Net P&L",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: sy(18)
+                          ),
+                        ),
+                        Text(
+                          "39796.18",
+                          style: TextStyle(
+                              color: Colors.greenAccent,
+                              fontSize: sy(18)
+                          ),
+                        ),
+                      ],
+                    ),),
                 ],
               ));
         });
   }
+}
+
+class TextCards extends StatelessWidget{
+  final String name;
+  final double value;
+  TextCards({this.name,this.value});
+  @override
+  Widget build(BuildContext context) {
+    return RelativeBuilder(builder: (context, height, width, sy, sx) {
+      return Padding(
+        padding: EdgeInsets.symmetric(vertical: sy(10)),
+      child: Column(
+        children: [
+          Padding(padding: EdgeInsets.symmetric(horizontal: sx(20)) ,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: sy(12)
+                  ),
+                ),
+                Text(
+                  value.toString(),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: sy(12)
+                  ),
+                ),
+              ],
+            ),),
+          Divider(thickness: 0.5,color: Colors.white,)
+
+        ],
+      ),);
+    }
+    );
+  }
+
+
 }
