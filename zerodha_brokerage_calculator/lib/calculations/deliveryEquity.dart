@@ -30,6 +30,10 @@ class DeliveryEquity {
     return (0.0000345 * turn);
   }
 
+  double ClearingCharge() {
+    return 0;
+  }
+
   double gst() {
     broke = brokerage();
     transac = transactionCharges();
@@ -43,5 +47,23 @@ class DeliveryEquity {
 
   double stampCharges() {
     return (0.00015 * buy * quantity);
+  }
+
+  double totalTaxes() {
+    return (brokerage() +
+        stt() +
+        transactionCharges() +
+        ClearingCharge() +
+        gst() +
+        sebiCharges() +
+        stampCharges());
+  }
+
+  double breakeven() {
+    return (totalTaxes() / quantity);
+  }
+
+  double netProfit() {
+    return (((sell - buy) * quantity) - totalTaxes());
   }
 }

@@ -33,6 +33,10 @@ class IntraDayEquity {
     return (0.0000345 * turn);
   }
 
+  double ClearingCharge() {
+    return 0;
+  }
+
   double gst() {
     broke = brokerage();
     transac = transactionCharges();
@@ -46,5 +50,23 @@ class IntraDayEquity {
 
   double stampCharges() {
     return (0.00003 * buy * quantity);
+  }
+
+  double totalTaxes() {
+    return (brokerage() +
+        stt() +
+        transactionCharges() +
+        ClearingCharge() +
+        gst() +
+        sebiCharges() +
+        stampCharges());
+  }
+
+  double breakeven() {
+    return (totalTaxes() / quantity);
+  }
+
+  double netProfit() {
+    return (((sell - buy) * quantity) - totalTaxes());
   }
 }

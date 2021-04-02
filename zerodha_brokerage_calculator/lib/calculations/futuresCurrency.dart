@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class FuturesCurrency {
   double buy;
   double sell;
@@ -25,10 +27,6 @@ class FuturesCurrency {
     return result;
   }
 
-  double stt() {
-    return 0;
-  }
-
   double transactionCharges() {
     turn = turnover();
     double nseCharge = (0.000009 * turn);
@@ -36,6 +34,10 @@ class FuturesCurrency {
     double trans;
     (nse) ? (trans = nseCharge) : (trans = bseCharge);
     return trans;
+  }
+
+  double ClearingCharge() {
+    return 0;
   }
 
   double gst() {
@@ -51,5 +53,26 @@ class FuturesCurrency {
 
   double stampCharges() {
     return (0.000001 * buy * quantity * 1000);
+  }
+
+  double totalTaxes() {
+    return (brokerage() +
+        transactionCharges() +
+        ClearingCharge() +
+        gst() +
+        sebiCharges() +
+        stampCharges());
+  }
+
+  double breakeven() {
+    return (totalTaxes() / (quantity * 1000));
+  }
+
+  double pipsToBreakEven() {
+    return (breakeven() / 0.0025).ceilToDouble();
+  }
+
+  double netProfit() {
+    return (((sell - buy) * quantity * 1000) - totalTaxes());
   }
 }

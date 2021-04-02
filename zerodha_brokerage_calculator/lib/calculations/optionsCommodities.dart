@@ -42,16 +42,20 @@ class OptionsCommodities {
     return 0;
   }
 
-  double ctt() {
-    double result = 0;
-    String value = commodityOptMultiplier[commodity];
-    double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return (0.0005 * sell * quantity * multiplier);
+  double ClearingCharge() {
+    return 0;
   }
 
   double gst() {
     broke = brokerage();
     return (0.18 * (broke));
+  }
+
+  double ctt() {
+    double result = 0;
+    String value = commodityOptMultiplier[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    return (0.0005 * sell * quantity * multiplier);
   }
 
   double sebiCharges() {
@@ -63,5 +67,27 @@ class OptionsCommodities {
     String value = commodityOptMultiplier[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
     return (0.00003 * buy * quantity * multiplier);
+  }
+
+  double totalTaxes() {
+    return (brokerage() +
+        exchangeCharge() +
+        ClearingCharge() +
+        gst() +
+        ctt() +
+        sebiCharges() +
+        stampCharges());
+  }
+
+  double pointsToBreakeven() {
+    String value = commodityOptMultiplier[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    return (totalTaxes() / (quantity * multiplier));
+  }
+
+  double netProfit() {
+    String value = commodityOptMultiplier[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    return (((sell - buy) * quantity * multiplier) - totalTaxes());
   }
 }

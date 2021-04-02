@@ -32,6 +32,10 @@ class FuturesEquity {
     return (0.00002 * turn);
   }
 
+  double ClearingCharge() {
+    return 0;
+  }
+
   double gst() {
     broke = brokerage();
     transac = transactionCharges();
@@ -45,5 +49,23 @@ class FuturesEquity {
 
   double stampCharges() {
     return (0.00002 * buy * quantity);
+  }
+
+  double totalTaxes() {
+    return (brokerage() +
+        stt() +
+        transactionCharges() +
+        ClearingCharge() +
+        gst() +
+        sebiCharges() +
+        stampCharges());
+  }
+
+  double breakeven() {
+    return (totalTaxes() / quantity);
+  }
+
+  double netProfit() {
+    return (((sell - buy) * quantity) - totalTaxes());
   }
 }
