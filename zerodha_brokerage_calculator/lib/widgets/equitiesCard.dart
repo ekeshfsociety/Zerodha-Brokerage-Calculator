@@ -118,6 +118,21 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
+  double returnSEBICharges(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.sebiCharges(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.sebiCharges(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.sebiCharges(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.sebiCharges(buy, sell, quantity);
+      default:
+        return IntraDayEquity.sebiCharges(buy, sell, quantity);
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -325,7 +340,7 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "SEBI charges",
-                    value: 0.42,
+                    value: returnSEBICharges(),
                   ),
                   TextCards(
                     name: "Stamp Duty",
