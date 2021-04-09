@@ -1,15 +1,4 @@
-import 'dart:math';
-
 class FuturesCurrency {
-  double buy;
-  double sell;
-  int quantity;
-  double turn;
-  double broke;
-  double transac;
-  bool nse;
-
-  FuturesCurrency(this.buy, this.sell, this.quantity, this.nse);
 
  static double turnover(double buy, int quantity , double sell) {
     return (((buy * quantity) + (sell * quantity)) * 1000);
