@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:zerodha_brokerage_calculator/widgets/currecncyCard.dart';
 import 'package:zerodha_brokerage_calculator/widgets/equitiesCard.dart';
 import '../widgets/titles.dart';
 
@@ -23,7 +24,16 @@ class _HomePageState extends State<HomePage> {
             ),
           ));
 
-  List<Widget> item = [Equities(key:Key("1"),name:"Intraday Equity"),Equities(key:Key("2"),name:"Delivery Equity"),Equities(key:Key("3"),name:"F&O - Futures"),Equities(key:Key("4"),name:"F&O - Options")];
+  List<Widget> item = [
+    Equities(key: Key("1"), name: "Intraday Equity"),
+    Equities(key: Key("2"), name: "Delivery Equity"),
+    Equities(key: Key("3"), name: "F&O - Futures"),
+    Equities(key: Key("4"), name: "F&O - Options")
+  ];
+  List<Widget> itemCurrency = [
+    Currency(key: Key("1"), name: "Futures Currency", isFutures: true),
+    Currency(key: Key("2"), name: "Options Currency", isFutures: false)
+  ];
   @override
   void dispose() {
     super.dispose();
@@ -34,14 +44,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return Scaffold(
-
         backgroundColor: Color(0xff000814),
         body: SafeArea(
           child: Stack(
             children: [
               SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
-                child:Padding(
+                child: Padding(
                   padding: EdgeInsets.only(top: sy(60)),
                   child: Column(
                     children: [
@@ -57,7 +66,8 @@ class _HomePageState extends State<HomePage> {
                               enableInfiniteScroll: false,
                               disableCenter: false,
                               autoPlay: false,
-                              onPageChanged: (index, carouselPageChangedReason) {
+                              onPageChanged:
+                                  (index, carouselPageChangedReason) {
                                 setState(() {
                                   _currentIndex = index;
                                 });
@@ -77,9 +87,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                      ),Padding(
-                        padding:EdgeInsets.only(top: sy(10)),
-                        child:Container(
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: sy(10)),
+                        child: Container(
                           child: CarouselSlider(
                               options: CarouselOptions(
                                 height: sy(610),
@@ -88,14 +99,17 @@ class _HomePageState extends State<HomePage> {
                                 scrollDirection: Axis.horizontal,
                                 enableInfiniteScroll: false,
                                 disableCenter: true,
-                                autoPlay: false,),
-                              items: item
-                          ),
-                        ) ,),
-                      SizedBox(height: sy(10),)
+                                autoPlay: false,
+                              ),
+                              items: itemCurrency),
+                        ),
+                      ),
+                      SizedBox(
+                        height: sy(10),
+                      )
                     ],
                   ),
-                ) ,
+                ),
               ),
             ],
           ),
