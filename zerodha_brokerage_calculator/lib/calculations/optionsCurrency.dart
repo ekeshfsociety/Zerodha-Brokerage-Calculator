@@ -11,16 +11,16 @@ class OptionsCurrency {
   OptionsCurrency(
       this.strikePrice, this.buy, this.sell, this.quantity, this.nse);
 
-  double turnover() {
+ static double turnover(double buy, int quantity , double sell) {
     return (((buy * quantity) + (sell * quantity)) * 1000);
   }
 
-  double notionalTurnover() {
+  static double notionalTurnover(double buy, int quantity , double sell, double strikePrice) {
     return (((buy + strikePrice) * quantity * 1000) +
         ((sell + strikePrice) * quantity * 1000));
   }
 
-  double brokerage() {
+ static double brokerage(double buy, int quantity , double sell, double strikePrice) {
     double result = 0;
     result += ((buy + strikePrice) * quantity * 1000 * 0.0003 > 20)
         ? 20
@@ -32,52 +32,48 @@ class OptionsCurrency {
     return result;
   }
 
-  double transactionCharges() {
-    turn = turnover();
-    double nseCharge = (0.00035 * turn);
-    double bseCharge = (0.00001 * turn);
+ static double transactionCharges(double buy, int quantity , double sell, bool nse) {
+    double nseCharge = (0.00035 * turnover(buy, quantity, sell));
+    double bseCharge = (0.00001 * turnover(buy, quantity, sell));
     double trans;
     (nse) ? (trans = nseCharge) : (trans = bseCharge);
     return trans;
   }
 
-  double ClearingCharge() {
+ static double ClearingCharge() {
     return 0;
   }
 
-  double gst() {
-    broke = brokerage();
-    transac = transactionCharges();
-    return (0.18 * (broke + transac));
+ static double gst(double buy, int quantity , double sell, double strikePrice, bool nse) {
+    return (0.18 * (brokerage(buy, quantity, sell, strikePrice) + transactionCharges(buy, quantity, sell, nse)));
   }
 
-  double sebiCharges() {
-    turn = turnover();
-    return (0.0000005 * turn);
+ static double sebiCharges(double buy, int quantity , double sell) {
+    return (0.0000005 * turnover(buy, quantity, sell));
   }
 
-  double stampCharges() {
+ static double stampCharges(double buy, int quantity) {
     return (0.000001 * buy * quantity * 1000);
   }
 
-  double totalTaxes() {
-    return (brokerage() +
-        transactionCharges() +
+ static double totalTaxes(double buy, int quantity , double sell, double strikePrice, bool nse) {
+    return (brokerage(buy, quantity, sell, strikePrice) +
+        transactionCharges(buy, quantity, sell, nse) +
         ClearingCharge() +
-        gst() +
-        sebiCharges() +
-        stampCharges());
+        gst(buy, quantity, sell, strikePrice, nse) +
+        sebiCharges(buy, quantity, sell) +
+        stampCharges(buy, quantity));
   }
 
-  double breakeven() {
-    return (totalTaxes() / (quantity * 1000));
+ static double breakeven(double buy, int quantity , double sell, double strikePrice, bool nse) {
+    return (totalTaxes(buy, quantity, sell, strikePrice, nse) / (quantity * 1000));
   }
 
-  double pipsToBreakeven() {
-    return ((breakeven() / 0.0025).ceilToDouble());
+ static double pipsToBreakeven(double buy, int quantity , double sell, double strikePrice, bool nse) {
+    return ((breakeven(buy, quantity, sell, strikePrice, nse) / 0.0025).ceilToDouble());
   }
 
-  double netProfit() {
-    return (((sell - buy) * quantity * 1000) - totalTaxes());
+ static double netProfit(double buy, int quantity , double sell, double strikePrice, bool nse) {
+    return (((sell - buy) * quantity * 1000) - totalTaxes(buy, quantity, sell, strikePrice, nse));
   }
 }
