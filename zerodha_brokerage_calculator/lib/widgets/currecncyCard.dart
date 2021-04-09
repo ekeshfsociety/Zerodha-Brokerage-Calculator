@@ -28,8 +28,6 @@ class _CurrencyState extends State<Currency> {
   int quantity;
   bool isNse = true;
   double strikePrice = 60.75;
-  FuturesCurrency fc;
-  OptionsCurrency oc;
 
   @override
   void initState() {
@@ -58,12 +56,6 @@ class _CurrencyState extends State<Currency> {
             double.parse(_strikePrice.text.isEmpty ? "0" : _strikePrice.text);
       });
     });
-
-    if (widget.isFutures) {
-      fc = new FuturesCurrency(buy, sell, quantity, isNse);
-    } else {
-      oc = new OptionsCurrency(strikePrice, buy, sell, quantity, isNse);
-    }
   }
 
   @override
@@ -255,49 +247,49 @@ class _CurrencyState extends State<Currency> {
                   ),
                   TextCards(
                       name: "Turnover",
-                      value: widget.isFutures ? fc.turnover() : oc.turnover()),
+                      value: widget.isFutures ? FuturesCurrency.turnover(buy, quantity, sell) : OptionsCurrency.turnover(buy, quantity, sell)),
                   TextCards(
                       name: "Brokerage",
                       value:
-                          widget.isFutures ? fc.brokerage() : oc.brokerage()),
+                          widget.isFutures ? FuturesCurrency.brokerage(buy, quantity, sell) : OptionsCurrency.brokerage(buy, quantity, sell, strikePrice)),
                   TextCards(
                     name: "Exhange txn charge",
                     value: widget.isFutures
-                        ? fc.transactionCharges()
-                        : oc.transactionCharges(),
+                        ? FuturesCurrency.transactionCharges(buy, quantity, sell, isNse)
+                        : OptionsCurrency.transactionCharges(buy, quantity, sell, isNse),
                   ),
                   TextCards(
                     name: "Clearing Charge",
                     value: widget.isFutures
-                        ? fc.ClearingCharge()
-                        : oc.ClearingCharge(),
+                        ? FuturesCurrency.ClearingCharge()
+                        : OptionsCurrency.ClearingCharge(),
                   ),
                   TextCards(
                       name: "GST",
-                      value: widget.isFutures ? fc.gst() : oc.gst()),
+                      value: widget.isFutures ? FuturesCurrency.gst(buy, quantity, sell, isNse) : OptionsCurrency.gst(buy, quantity, sell, strikePrice, isNse)),
                   TextCards(
                       name: "SEBI charges",
                       value: widget.isFutures
-                          ? fc.sebiCharges()
-                          : oc.sebiCharges()),
+                          ? FuturesCurrency.sebiCharges(buy, quantity, sell)
+                          : OptionsCurrency.sebiCharges(buy, quantity, sell)),
                   TextCards(
                       name: "Stamp Duty",
                       value: widget.isFutures
-                          ? fc.stampCharges()
-                          : oc.stampCharges()),
+                          ? FuturesCurrency.stampCharges(buy, quantity)
+                          : OptionsCurrency.stampCharges(buy, quantity)),
                   TextCards(
                       name: "Total Tax",
                       value:
-                          widget.isFutures ? fc.totalTaxes() : oc.totalTaxes()),
+                          widget.isFutures ? FuturesCurrency.totalTaxes(buy, quantity, sell, isNse) : OptionsCurrency.totalTaxes(buy, quantity, sell, strikePrice, isNse)),
                   TextCards(
                       name: "Points to breakeven",
                       value:
-                          widget.isFutures ? fc.breakeven() : oc.breakeven()),
+                          widget.isFutures ? FuturesCurrency.breakeven(buy, quantity, sell, isNse) : OptionsCurrency.breakeven(buy, quantity, sell, strikePrice, isNse)),
                   TextCards(
                       name: "Pips to breakeven",
                       value: widget.isFutures
-                          ? fc.pipsToBreakEven()
-                          : oc.pipsToBreakeven()),
+                          ? FuturesCurrency.pipsToBreakEven(buy, quantity, sell, isNse)
+                          : OptionsCurrency.pipsToBreakeven(buy, quantity, sell, strikePrice, isNse)),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: Row(
@@ -310,12 +302,12 @@ class _CurrencyState extends State<Currency> {
                         ),
                         Text(
                           widget.isFutures
-                              ? fc.netProfit().toString()
-                              : oc.netProfit().toString(),
+                              ? FuturesCurrency.netProfit(buy, quantity, sell, isNse).toString()
+                              : OptionsCurrency.netProfit(buy, quantity, sell, strikePrice, isNse).toString(),
                           style: TextStyle(
                               color: (widget.isFutures
-                                          ? fc.netProfit()
-                                          : oc.netProfit()) >=
+                                          ? FuturesCurrency.netProfit(buy, quantity, sell, isNse)
+                                          : OptionsCurrency.netProfit(buy, quantity, sell, strikePrice, isNse)) >=
                                       0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
