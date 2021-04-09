@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/futuresCurrency.dart';
-import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsCurrency.dart';
-import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
 import 'package:zerodha_brokerage_calculator/colors.dart';
 
 import 'displayText.dart';
@@ -31,7 +27,7 @@ class _CurrencyState extends State<Currency> {
   double sell;
   int quantity;
   bool isNse = true;
-  double strikePrice;
+  double strikePrice = 60.75;
   FuturesCurrency fc;
   OptionsCurrency oc;
 
@@ -135,7 +131,7 @@ class _CurrencyState extends State<Currency> {
                               )
                             : Container(),
                         Container(
-                          width: sy(60),
+                          width: sy(40),
                           child: TextFormField(
                             controller: _buy,
                             obscureText: false,
@@ -165,7 +161,7 @@ class _CurrencyState extends State<Currency> {
                           ),
                         ),
                         Container(
-                          width: sy(60),
+                          width: sy(40),
                           child: TextFormField(
                             controller: _sell,
                             obscureText: false,
@@ -195,7 +191,7 @@ class _CurrencyState extends State<Currency> {
                           ),
                         ),
                         Container(
-                          width: sy(60),
+                          width: sy(50),
                           child: TextFormField(
                             controller: _quantity,
                             obscureText: false,
