@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:relative_scale/relative_scale.dart';
+import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
+import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
 import 'package:zerodha_brokerage_calculator/colors.dart';
 
 import 'displayText.dart';
@@ -17,8 +21,214 @@ class _EquitiesState extends State<Equities> {
   TextEditingController _buy = new TextEditingController(text: "1000");
   TextEditingController _sell = new TextEditingController(text: "1100");
   TextEditingController _quantity = new TextEditingController(text: "400");
+  int index=0;
+  List functions = [IntraDayEquity,DeliveryEquity,FuturesEquity,OptionsEquity];
   int _sliding = 0;
+  double buy;
+  double sell;
+  int quantity;
 
+  double returnTurnOver(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.turnover(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.turnover(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.turnover(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.turnover(buy, sell, quantity);
+      default:
+        return IntraDayEquity.turnover(buy, sell, quantity);
+    }
+  }
+
+  double returnBrokerage(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.brokerage(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.brokerage();
+      case 2:
+        return FuturesEquity.brokerage(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.brokerage();
+      default:
+        return IntraDayEquity.brokerage(buy, sell, quantity);
+    }
+  }
+
+  double returnSTT(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.stt(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.stt(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.stt(sell, quantity);
+      case 3:
+        return OptionsEquity.stt(sell, quantity);
+      default:
+        return IntraDayEquity.stt(buy, sell, quantity);
+    }
+  }
+
+  double returnTxnCharge(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.transactionCharges(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.transactionCharges(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.transactionCharges(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.transactionCharges(buy, sell, quantity);
+      default:
+        return IntraDayEquity.transactionCharges(buy, sell, quantity);
+    }
+  }
+
+  double returnClearCharge(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.ClearingCharge();
+      case 1:
+        return DeliveryEquity.ClearingCharge();
+      case 2:
+        return FuturesEquity.ClearingCharge();
+      case 3:
+        return OptionsEquity.ClearingCharge();
+      default:
+        return IntraDayEquity.ClearingCharge();
+    }
+  }
+
+  double returnGST(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.gst(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.gst(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.gst(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.gst(buy, sell, quantity);
+      default:
+        return IntraDayEquity.gst(buy, sell, quantity);
+    }
+  }
+
+  double returnSEBICharges(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.sebiCharges(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.sebiCharges(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.sebiCharges(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.sebiCharges(buy, sell, quantity);
+      default:
+        return IntraDayEquity.sebiCharges(buy, sell, quantity);
+    }
+  }
+
+  double returnStamp(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.stampCharges(buy, quantity);
+      case 1:
+        return DeliveryEquity.stampCharges(buy,sell,quantity);
+      case 2:
+        return FuturesEquity.stampCharges(buy, quantity);
+      case 3:
+        return OptionsEquity.stampCharges(buy, quantity);
+      default:
+        return IntraDayEquity.stampCharges(buy, quantity);
+    }
+  }
+
+  double returnTotalTax(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.totalTaxes(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.totalTaxes(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.totalTaxes(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.totalTaxes(buy, sell, quantity);
+      default:
+        return IntraDayEquity.totalTaxes(buy, sell, quantity);
+    }
+  }
+
+  double returnBreakeven(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.breakeven(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.breakeven(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.breakeven(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.breakeven(buy, sell, quantity);
+      default:
+        return IntraDayEquity.breakeven(buy, sell, quantity);
+    }
+  }
+
+  double returnPL(){
+    switch(index){
+      case 0:
+        return IntraDayEquity.netProfit(buy, sell, quantity);
+      case 1:
+        return DeliveryEquity.netProfit(buy, sell, quantity);
+      case 2:
+        return FuturesEquity.netProfit(buy, sell, quantity);
+      case 3:
+        return OptionsEquity.netProfit(buy, sell, quantity);
+      default:
+        return IntraDayEquity.netProfit(buy, sell, quantity);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    buy = double.parse(_buy.text);
+    sell = double.parse(_sell.text);
+    quantity = int.parse(_quantity.text);
+    switch(widget.name){
+      case "Intraday Equity":
+        index = 0;
+        break;
+      case "Delivery Equity":
+        index = 1;
+        break;
+      case "F&O - Futures":
+        index = 2;
+        break;
+      case "F&O - Options":
+        index = 3;
+        break;
+    }
+    _buy.addListener(() {
+      setState(() {
+        buy = double.parse(_buy.text.isEmpty ? "0" : _buy.text);
+      });
+    });
+    _sell.addListener(() {
+        setState(() {
+          sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
+        });
+    });
+    _quantity.addListener(() {
+      setState(() {
+        quantity = int.parse(_quantity.text.isEmpty ? "0" : _quantity.text);
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(
@@ -169,43 +379,43 @@ class _EquitiesState extends State<Equities> {
                   ),
                   TextCards(
                     name: "Turnover",
-                    value: 8400000,
+                    value: returnTurnOver()
                   ),
                   TextCards(
                     name: "Brokerage",
-                    value: 40,
+                    value: returnBrokerage(),
                   ),
                   TextCards(
                     name: "STT Total",
-                    value: 110,
+                    value: returnSTT(),
                   ),
                   TextCards(
                     name: "Exchange txn charge",
-                    value: 28.98,
+                    value: returnTxnCharge(),
                   ),
                   TextCards(
                     name: "Clearing charge",
-                    value: 0,
+                    value: returnClearCharge(),
                   ),
                   TextCards(
                     name: "GST",
-                    value: 12.42,
+                    value: returnGST(),
                   ),
                   TextCards(
                     name: "SEBI charges",
-                    value: 0.42,
+                    value: returnSEBICharges(),
                   ),
                   TextCards(
                     name: "Stamp Duty",
-                    value: 12,
+                    value: returnStamp(),
                   ),
                   TextCards(
                     name: "Total Tax",
-                    value: 203.82,
+                    value: returnTotalTax(),
                   ),
                   TextCards(
                     name: "Points to breakeven",
-                    value: 0.51,
+                    value: returnBreakeven(),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: sx(20)),
@@ -218,9 +428,9 @@ class _EquitiesState extends State<Equities> {
                               TextStyle(color: Colors.white, fontSize: sy(18)),
                         ),
                         Text(
-                          "39796.18",
+                          returnPL().toString(),
                           style: TextStyle(
-                              color: Colors.greenAccent, fontSize: sy(18)),
+                              color: returnPL() >=0 ? Colors.greenAccent : Colors.redAccent, fontSize: sy(18)),
                         ),
                       ],
                     ),

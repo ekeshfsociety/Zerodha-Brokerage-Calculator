@@ -1,69 +1,52 @@
 class DeliveryEquity {
-  double buy;
-  double sell;
-  int quantity;
-  double turn;
-  double broke;
-  double transac;
 
-  DeliveryEquity(
-    this.buy,
-    this.sell,
-    this.quantity,
-  );
-
-  double turnover() {
+  static double turnover(double buy, double sell, int quantity) {
     return ((buy * quantity) + (sell * quantity));
   }
 
-  double brokerage() {
+ static  double brokerage() {
     return 0;
   }
 
-  double stt() {
-    turn = turnover();
-    return (0.001 * turn);
+  static double stt(double buy, double sell, int quantity) {
+    return (0.001 * turnover(buy, sell, quantity));
   }
 
-  double transactionCharges() {
-    turn = turnover();
-    return (0.0000345 * turn);
+  static double transactionCharges(double buy, double sell, int quantity) {
+    return (0.0000345 * turnover(buy, sell, quantity));
   }
 
-  double ClearingCharge() {
+  static double ClearingCharge() {
     return 0;
   }
 
-  double gst() {
-    broke = brokerage();
-    transac = transactionCharges();
-    return (0.18 * (broke + transac));
+  static double gst(double buy, double sell, int quantity) {
+    return (0.18 * (brokerage() + transactionCharges(buy, sell, quantity)));
   }
 
-  double sebiCharges() {
-    turn = turnover();
-    return (0.0000005 * turn);
+  static double sebiCharges(double buy, double sell, int quantity) {
+    return (0.0000005 * turnover(buy, sell, quantity));
   }
 
-  double stampCharges() {
+  static double stampCharges(double buy, double sell, int quantity) {
     return (0.00015 * buy * quantity);
   }
 
-  double totalTaxes() {
+  static double totalTaxes(double buy, double sell, int quantity) {
     return (brokerage() +
-        stt() +
-        transactionCharges() +
+        stt(buy, sell, quantity) +
+        transactionCharges(buy, sell, quantity) +
         ClearingCharge() +
-        gst() +
-        sebiCharges() +
-        stampCharges());
+        gst(buy, sell, quantity) +
+        sebiCharges(buy, sell, quantity) +
+        stampCharges(buy, sell, quantity));
   }
 
-  double breakeven() {
-    return (totalTaxes() / quantity);
+  static double breakeven(double buy, double sell, int quantity) {
+    return (totalTaxes(buy, sell, quantity) / quantity);
   }
 
-  double netProfit() {
-    return (((sell - buy) * quantity) - totalTaxes());
+  static double netProfit(double buy, double sell, int quantity) {
+    return (((sell - buy) * quantity) - totalTaxes(buy, sell, quantity));
   }
 }
