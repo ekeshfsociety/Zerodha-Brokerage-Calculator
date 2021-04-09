@@ -17,9 +17,9 @@ class Currency extends StatefulWidget {
 }
 
 class _CurrencyState extends State<Currency> {
-  TextEditingController _buy = new TextEditingController(text: "1000");
-  TextEditingController _sell = new TextEditingController(text: "1100");
-  TextEditingController _quantity = new TextEditingController(text: "400");
+  TextEditingController _buy = new TextEditingController(text: "49.2525");
+  TextEditingController _sell = new TextEditingController(text: "49.2725");
+  TextEditingController _quantity = new TextEditingController(text: "1");
   TextEditingController _strikePrice = new TextEditingController(text: "60.75");
   int index = 0;
   int _sliding = 0;
@@ -123,7 +123,7 @@ class _CurrencyState extends State<Currency> {
                               )
                             : Container(),
                         Container(
-                          width: sy(40),
+                          width: sy(widget.isFutures ? 60 : 40),
                           child: TextFormField(
                             controller: _buy,
                             obscureText: false,
@@ -153,7 +153,7 @@ class _CurrencyState extends State<Currency> {
                           ),
                         ),
                         Container(
-                          width: sy(40),
+                          width: sy(widget.isFutures ? 60 : 40),
                           child: TextFormField(
                             controller: _sell,
                             obscureText: false,
@@ -183,7 +183,7 @@ class _CurrencyState extends State<Currency> {
                           ),
                         ),
                         Container(
-                          width: sy(50),
+                          width: sy(widget.isFutures ? 60 : 50),
                           child: TextFormField(
                             controller: _quantity,
                             obscureText: false,
