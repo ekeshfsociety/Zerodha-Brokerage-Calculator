@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   TextEditingController _search = new TextEditingController();
   int _currentIndex = 0;
+  int pageNum = 0;
   final List<Widget> itemList = List.generate(
       3,
       (index) => Container(
@@ -34,10 +35,12 @@ class _HomePageState extends State<HomePage> {
     Currency(key: Key("1"), name: "Futures Currency", isFutures: true),
     Currency(key: Key("2"), name: "Options Currency", isFutures: false)
   ];
+  List listDisplayed;
+
   @override
-  void dispose() {
-    super.dispose();
-    _search.dispose();
+  void initState() {
+    super.initState();
+    listDisplayed = [item,itemCurrency,item];
   }
 
   @override
@@ -70,6 +73,9 @@ class _HomePageState extends State<HomePage> {
                                   (index, carouselPageChangedReason) {
                                 setState(() {
                                   _currentIndex = index;
+                                  if(_currentIndex == 1 && pageNum == 2){
+                                    pageNum = 1;
+                                  }
                                 });
                               }),
                           items: [
@@ -96,12 +102,18 @@ class _HomePageState extends State<HomePage> {
                                 height: sy(610),
                                 enlargeCenterPage: true,
                                 viewportFraction: 0.8,
+                                initialPage: pageNum,
                                 scrollDirection: Axis.horizontal,
                                 enableInfiniteScroll: false,
                                 disableCenter: true,
                                 autoPlay: false,
+                                onPageChanged: (num, carouselPageChangedReason){
+                                  setState(() {
+                                    pageNum = num;
+                                  });
+                                }
                               ),
-                              items: itemCurrency),
+                              items: listDisplayed[_currentIndex]),
                         ),
                       ),
                       SizedBox(
