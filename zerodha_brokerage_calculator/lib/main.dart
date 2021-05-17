@@ -119,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                               lightSource: LightSource.topLeft,
                               color: Colors.grey),
                           child: CategoryCard(
-                            title: "Kegel Exercises",
+                            title: "Commodities",
                             svgSrc: "assets/icons/commodity.svg",
                             press: () {},
                           ),
