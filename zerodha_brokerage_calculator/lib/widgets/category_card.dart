@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zerodha_brokerage_calculator/constants.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class CategoryCard extends StatelessWidget {
   final String svgSrc;
@@ -40,7 +41,11 @@ class CategoryCard extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Spacer(),
-                  SvgPicture.asset(svgSrc),
+                  SvgPicture.asset(
+                    svgSrc,
+                    width: 100,
+                    height: 100,
+                  ),
                   Spacer(),
                   Text(
                     title,
@@ -48,7 +53,7 @@ class CategoryCard extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .title
-                        .copyWith(fontSize: 15),
+                        .copyWith(fontSize: 20),
                   )
                 ],
               ),
