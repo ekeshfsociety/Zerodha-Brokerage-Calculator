@@ -58,7 +58,7 @@ class HomeScreen extends StatelessWidget {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: EdgeInsets.symmetric(horizontal: sx(20)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -95,15 +95,15 @@ class HomeScreen extends StatelessWidget {
                       child: StaggeredGridView.count(
                         crossAxisCount: 2,
                         // childAspectRatio: 0.85,
-                        crossAxisSpacing: 20,
-                        mainAxisSpacing: 20,
+                        crossAxisSpacing: sx(20),
+                        mainAxisSpacing: sy(20),
                         children: <Widget>[
                           Neumorphic(
                             style: NeumorphicStyle(
                                 shape: NeumorphicShape.concave,
                                 boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(12)),
-                                depth: 8,
+                                    BorderRadius.circular(sy(12))),
+                                depth: sy(8),
                                 lightSource: LightSource.topLeft,
                                 color: Colors.grey),
                             child: CategoryCard(
@@ -116,8 +116,8 @@ class HomeScreen extends StatelessWidget {
                             style: NeumorphicStyle(
                                 shape: NeumorphicShape.concave,
                                 boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(12)),
-                                depth: 8,
+                                    BorderRadius.circular(sy(12))),
+                                depth: sy(8),
                                 lightSource: LightSource.topLeft,
                                 color: Colors.grey),
                             child: CategoryCard(
@@ -130,8 +130,8 @@ class HomeScreen extends StatelessWidget {
                             style: NeumorphicStyle(
                                 shape: NeumorphicShape.concave,
                                 boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(12)),
-                                depth: 8,
+                                    BorderRadius.circular(sy(12))),
+                                depth: sy(8),
                                 lightSource: LightSource.topLeft,
                                 color: Colors.grey),
                             child: CategoryCard(
@@ -142,9 +142,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                         staggeredTiles: [
-                          StaggeredTile.extent(2, 233),
-                          StaggeredTile.extent(1, 233),
-                          StaggeredTile.extent(1, 233)
+                          StaggeredTile.extent(2, sy(233)),
+                          StaggeredTile.extent(1, sy(233)),
+                          StaggeredTile.extent(1, sy(233))
                         ],
                       ),
                     ),
