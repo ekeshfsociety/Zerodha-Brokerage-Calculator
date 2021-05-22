@@ -62,34 +62,22 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: sy(26),
-                        width: sy(26),
-                        decoration: BoxDecoration(
-                          color: Colors.blue[100],
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
                     Text(
                       greeting(),
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w500,
                           fontSize: sx(50),
                           fontFamily: 'Cairo'),
                     ),
                     Text(
                       'Happy Trading',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                           fontSize: sx(75),
                           fontFamily: 'Cairo'),
                     ),
                     SizedBox(
-                      height: sy(35.0),
+                      height: sy(20.0),
                     ),
                     Expanded(
                       child: StaggeredGridView.count(
@@ -142,9 +130,9 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ],
                         staggeredTiles: [
-                          StaggeredTile.extent(2, sy(233)),
-                          StaggeredTile.extent(1, sy(233)),
-                          StaggeredTile.extent(1, sy(233))
+                          StaggeredTile.extent(2, sy(145)),
+                          StaggeredTile.extent(1, sy(145)),
+                          StaggeredTile.extent(1, sy(145))
                         ],
                       ),
                     ),
