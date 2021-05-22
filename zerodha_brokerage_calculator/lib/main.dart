@@ -77,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                           fontFamily: 'Cairo'),
                     ),
                     SizedBox(
-                      height: sy(20.0),
+                      height: sy(30.0),
                     ),
                     Expanded(
                       child: StaggeredGridView.count(
