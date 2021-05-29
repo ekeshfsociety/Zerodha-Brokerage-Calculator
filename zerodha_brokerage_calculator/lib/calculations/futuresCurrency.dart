@@ -6,13 +6,13 @@ class FuturesCurrency {
 
   static double brokerage(double buy, int quantity, double sell) {
     double result = 0;
-    result += (buy * quantity * 0.0003 * 1000 > 20)
+    double brokerage_buy = ((buy * quantity * 1000 * 0.0003) > 20)
         ? 20
         : (buy * quantity * 1000 * 0.0003);
-    result += (sell * quantity * 0.0003 * 1000 > 20)
+    double brokerage_sell = ((sell * quantity * 1000 * 0.0003) > 20)
         ? 20
         : (sell * quantity * 1000 * 0.0003);
-    (result * 1000 > 40) ? result = 40 : result = result;
+    result = brokerage_buy + brokerage_sell;
     return double.parse(result.toStringAsFixed(2));
   }
 

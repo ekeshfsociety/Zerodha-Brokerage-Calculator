@@ -14,13 +14,15 @@ class OptionsCurrency {
   static double brokerage(
       double buy, int quantity, double sell, double strikePrice) {
     double result = 0;
-    result += ((buy + strikePrice) * quantity * 1000 * 0.0003 > 20)
-        ? 20
-        : (buy * quantity * 0.0003 * 1000);
-    result += ((sell + strikePrice) * quantity * 1000 * 0.0003 > 20)
-        ? 20
-        : (sell * quantity * 0.0003 * 1000);
-    (result * 1000 > 40) ? result = 40 : result = result * 1000;
+    double brokerage_buy =
+        (((buy + strikePrice) * quantity * 1000 * 0.0003) > 20)
+            ? 20
+            : ((buy + strikePrice) * quantity * 1000 * 0.0003);
+    double brokerage_sell =
+        (((sell + strikePrice) * quantity * 1000 * 0.0003) > 20)
+            ? 20
+            : ((sell + strikePrice) * quantity * 1000 * 0.0003);
+    result = brokerage_buy + brokerage_sell;
     return double.parse(result.toStringAsFixed(2));
   }
 
