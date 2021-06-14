@@ -21,15 +21,20 @@ class _EquitiesState extends State<Equities> {
   TextEditingController _buy = new TextEditingController(text: "1000");
   TextEditingController _sell = new TextEditingController(text: "1100");
   TextEditingController _quantity = new TextEditingController(text: "400");
-  int index=0;
-  List functions = [IntraDayEquity,DeliveryEquity,FuturesEquity,OptionsEquity];
+  int index = 0;
+  List functions = [
+    IntraDayEquity,
+    DeliveryEquity,
+    FuturesEquity,
+    OptionsEquity
+  ];
   int _sliding = 0;
   double buy;
   double sell;
   int quantity;
 
-  double returnTurnOver(){
-    switch(index){
+  double returnTurnOver() {
+    switch (index) {
       case 0:
         return IntraDayEquity.turnover(buy, sell, quantity);
       case 1:
@@ -43,8 +48,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnBrokerage(){
-    switch(index){
+  double returnBrokerage() {
+    switch (index) {
       case 0:
         return IntraDayEquity.brokerage(buy, sell, quantity);
       case 1:
@@ -58,23 +63,23 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnSTT(){
-    switch(index){
+  double returnSTT() {
+    switch (index) {
       case 0:
-        return IntraDayEquity.stt(buy, sell, quantity);
+        return IntraDayEquity.stt(buy, sell, quantity).toDouble();
       case 1:
-        return DeliveryEquity.stt(buy, sell, quantity);
+        return DeliveryEquity.stt(buy, sell, quantity).toDouble();
       case 2:
-        return FuturesEquity.stt(sell, quantity);
+        return FuturesEquity.stt(sell, quantity).toDouble();
       case 3:
-        return OptionsEquity.stt(sell, quantity);
+        return OptionsEquity.stt(sell, quantity).toDouble();
       default:
-        return IntraDayEquity.stt(buy, sell, quantity);
+        return IntraDayEquity.stt(buy, sell, quantity).toDouble();
     }
   }
 
-  double returnTxnCharge(){
-    switch(index){
+  double returnTxnCharge() {
+    switch (index) {
       case 0:
         return IntraDayEquity.transactionCharges(buy, sell, quantity);
       case 1:
@@ -88,8 +93,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnClearCharge(){
-    switch(index){
+  double returnClearCharge() {
+    switch (index) {
       case 0:
         return IntraDayEquity.ClearingCharge();
       case 1:
@@ -103,8 +108,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnGST(){
-    switch(index){
+  double returnGST() {
+    switch (index) {
       case 0:
         return IntraDayEquity.gst(buy, sell, quantity);
       case 1:
@@ -118,8 +123,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnSEBICharges(){
-    switch(index){
+  double returnSEBICharges() {
+    switch (index) {
       case 0:
         return IntraDayEquity.sebiCharges(buy, sell, quantity);
       case 1:
@@ -133,12 +138,12 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnStamp(){
-    switch(index){
+  double returnStamp() {
+    switch (index) {
       case 0:
         return IntraDayEquity.stampCharges(buy, quantity);
       case 1:
-        return DeliveryEquity.stampCharges(buy,sell,quantity);
+        return DeliveryEquity.stampCharges(buy, sell, quantity);
       case 2:
         return FuturesEquity.stampCharges(buy, quantity);
       case 3:
@@ -148,8 +153,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnTotalTax(){
-    switch(index){
+  double returnTotalTax() {
+    switch (index) {
       case 0:
         return IntraDayEquity.totalTaxes(buy, sell, quantity);
       case 1:
@@ -163,8 +168,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnBreakeven(){
-    switch(index){
+  double returnBreakeven() {
+    switch (index) {
       case 0:
         return IntraDayEquity.breakeven(buy, sell, quantity);
       case 1:
@@ -178,8 +183,8 @@ class _EquitiesState extends State<Equities> {
     }
   }
 
-  double returnPL(){
-    switch(index){
+  double returnPL() {
+    switch (index) {
       case 0:
         return IntraDayEquity.netProfit(buy, sell, quantity);
       case 1:
@@ -199,7 +204,7 @@ class _EquitiesState extends State<Equities> {
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
-    switch(widget.name){
+    switch (widget.name) {
       case "Intraday Equity":
         index = 0;
         break;
@@ -219,9 +224,9 @@ class _EquitiesState extends State<Equities> {
       });
     });
     _sell.addListener(() {
-        setState(() {
-          sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
-        });
+      setState(() {
+        sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
+      });
     });
     _quantity.addListener(() {
       setState(() {
@@ -229,6 +234,7 @@ class _EquitiesState extends State<Equities> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(
@@ -377,10 +383,7 @@ class _EquitiesState extends State<Equities> {
                   SizedBox(
                     height: sy(10),
                   ),
-                  TextCards(
-                    name: "Turnover",
-                    value: returnTurnOver()
-                  ),
+                  TextCards(name: "Turnover", value: returnTurnOver()),
                   TextCards(
                     name: "Brokerage",
                     value: returnBrokerage(),
@@ -430,7 +433,10 @@ class _EquitiesState extends State<Equities> {
                         Text(
                           returnPL().toString(),
                           style: TextStyle(
-                              color: returnPL() >=0 ? Colors.greenAccent : Colors.redAccent, fontSize: sy(18)),
+                              color: returnPL() >= 0
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
+                              fontSize: sy(18)),
                         ),
                       ],
                     ),
