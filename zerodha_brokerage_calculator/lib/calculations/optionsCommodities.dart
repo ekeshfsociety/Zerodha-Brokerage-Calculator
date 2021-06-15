@@ -13,17 +13,17 @@ class OptionsCommodities {
   OptionsCommodities(
       this.commodity, this.strikePrice, this.buy, this.sell, this.quantity);
 
-  double turnover() {
+  static double turnover(double buy, int quantity, double sell, String commodity, double strikePrice) {
     String value = commodityOptMultiplier[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return ((buy + sell) * multiplier * quantity);
+    return double.parse(((buy + sell) * multiplier * quantity).toStringAsFixed(2));
   }
 
-  double notionalTurnover() {
+  static double notionalTurnover(double buy, int quantity, double sell, String commodity) {
     String value = commodityOptMultiplier[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return (((buy + strikePrice) * quantity * multiplier) +
-        ((sell + strikePrice) * quantity * multiplier));
+    return double.parse((((buy + strikePrice) * quantity * multiplier) +
+        ((sell + strikePrice) * quantity * multiplier)).toStringAsFixed(2));
   }
 
   double brokerage() {
