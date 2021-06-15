@@ -30,13 +30,34 @@ class FuturesCommodities {
 
     return double.parse(((brokerage_buy + brokerage_sell)).toStringAsFixed(2));
   }
-  /// TODO: Some exception commodities changes
+
   static double transactionCharges(double buy, int quantity, double sell, String commodity) {
     double turn = turnover(buy, quantity, sell, commodity);
     double trans ;
     String value = commodityMultiplierMap[commodity];
     String newValue = value.substring(value.length - 1);
     (newValue == 'a') ? (trans = (0.000026 * turn)) : (trans = (0.0000005 * turn)) ;
+
+    if(commodity == 'RBDPMOLEIN') {
+      if(turnover(buy, quantity, sell, commodity) > 100000)
+        {
+          double rbd_multiplier = (turnover(buy, quantity, sell, commodity) / 100000);
+          trans = rbd_multiplier ;
+        }
+    }
+
+    if(commodity == 'CASTORSEED') {
+      trans = (0.000005 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'RBDMOLEIN') {
+      trans = (0.00001 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'PEPPER') {
+      trans = (0.0000005 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'KAPAS') {
+      trans = (0.000026 * turnover(buy, quantity, sell, commodity));
+    }
 
     return double.parse((trans).toStringAsFixed(2));
   }
