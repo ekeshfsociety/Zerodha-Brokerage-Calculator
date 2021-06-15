@@ -1,56 +1,78 @@
 import 'package:zerodha_brokerage_calculator/globals.dart';
 
 class FuturesCommodities {
-  String commodity;
-  double buy;
-  double sell;
-  int quantity;
-  double turn;
-  double broke;
-  double transac;
 
-  FuturesCommodities(this.commodity, this.buy, this.sell, this.quantity);
-
-  double turnover() {
+  static double turnover(double buy, int quantity, double sell,String commodity) {
     String value = commodityMultiplierMap[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return ((buy + sell) * multiplier * quantity);
+    return double.parse((((buy + sell) * multiplier * quantity)).toStringAsFixed(2));
   }
 
-  double brokerage() {
-    double result = 0;
-    result += (buy * quantity * 0.0003 * 1000 > 20)
-        ? 20
-        : (buy * quantity * 1000 * 0.0003);
-    result += (sell * quantity * 0.0003 * 1000 > 20)
-        ? 20
-        : (sell * quantity * 1000 * 0.0003);
-    (result * 1000 > 40) ? result = 40 : result = result;
-    return result;
+  static double brokerage(double buy, int quantity, double sell, String commodity) {
+    String value = commodityMultiplierMap[commodity];
+    double multiplier = double.parse(value.substring(0, (value.length - 1)));
+    double brokerage_buy = 0;
+    double brokerage_sell = 0;
+
+    if((buy * multiplier * quantity) > 200000) {
+      brokerage_buy = 20;
+    }
+    else {
+      brokerage_buy = ((buy * multiplier *quantity * 0.0003) > 20) ? 20 : (buy * multiplier * 0.003 * quantity);
+    }
+
+    if((sell * multiplier * quantity) > 200000) {
+      brokerage_sell = 20;
+    }
+    else {
+      brokerage_sell = ((sell * multiplier *quantity * 0.0003) > 20) ? 20 : (sell * multiplier * 0.003 * quantity);
+    }
+
+    return double.parse(((brokerage_buy + brokerage_sell)).toStringAsFixed(2));
   }
 
-  double transactionCharges() {
-    turn = turnover();
-    double categoryA = (0.000026 * turn);
-    double categoryB = (0.0000005 * turn);
-    double trans;
+  static double transactionCharges(double buy, int quantity, double sell, String commodity) {
+    double turn = turnover(buy, quantity, sell, commodity);
+    double trans ;
     String value = commodityMultiplierMap[commodity];
     String newValue = value.substring(value.length - 1);
-    (newValue == 'a') ? (trans = categoryA) : (trans = categoryB);
-    return trans;
+    (newValue == 'a') ? (trans = (0.000026 * turn)) : (trans = (0.0000005 * turn)) ;
+
+    if(commodity == 'RBDPMOLEIN') {
+      if(turnover(buy, quantity, sell, commodity) > 100000)
+        {
+          double rbd_multiplier = (turnover(buy, quantity, sell, commodity) / 100000);
+          trans = rbd_multiplier ;
+        }
+    }
+
+    if(commodity == 'CASTORSEED') {
+      trans = (0.000005 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'RBDMOLEIN') {
+      trans = (0.00001 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'PEPPER') {
+      trans = (0.0000005 * turnover(buy, quantity, sell, commodity));
+    }
+    else if(commodity == 'KAPAS') {
+      trans = (0.000026 * turnover(buy, quantity, sell, commodity));
+    }
+
+    return double.parse((trans).toStringAsFixed(2));
   }
 
-  double ClearingCharge() {
+  static double ClearingCharge() {
     return 0;
   }
 
-  double gst() {
-    broke = brokerage();
-    transac = transactionCharges();
-    return (0.18 * (broke + transac));
+  static double gst(double buy, int quantity, double sell, String commodity) {
+    double broke = brokerage(buy, quantity, sell, commodity);
+    double transac = transactionCharges(buy, quantity, sell, commodity);
+    return double.parse((0.18 * (broke + transac)).toStringAsFixed(2));
   }
 
-  double ctt() {
+  static double ctt(double buy, int quantity, double sell, String commodity) {
     double result = 0;
     String value = commodityMultiplierMap[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
@@ -58,47 +80,51 @@ class FuturesCommodities {
     if (newValue == 'a') {
       result = (0.0001 * sell * quantity * multiplier);
     }
-    return result;
+    else {
+      result = 0 ;
+    }
+    return double.parse(result.toStringAsFixed(2));
   }
 
-  double sebiCharges() {
-    turn = turnover();
-    double sebiTax;
-    String value = commodityGroupMap[commodity];
-    String newValue = value.substring(value.length - 1);
-    (newValue == 'a')
-        ? (sebiTax = turn * 0.0000001)
-        : (sebiTax = turn * 0.0000005);
-    return sebiTax;
+  static double sebiCharges(double buy, int quantity, double sell, String commodity) {
+    double turn = turnover(buy, quantity, sell, commodity);
+    double sebiTax = turn * 0.000001 ;
+    // String value = commodityGroupMap[commodity];
+    // String newValue = value.substring(value.length - 1);
+    // (newValue == 'a')
+    //     ? (sebiTax = turn * 0.0000001)
+    //     : (sebiTax = turn * 0.0000005);
+    return double.parse(sebiTax.toStringAsFixed(2));
   }
 
-  double stampCharges() {
+  static double stampCharges(double buy, int quantity, double sell, String commodity) {
     String value = commodityMultiplierMap[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
     double result;
     result = buy * quantity * multiplier * 0.00002;
-    return result;
+    return double.parse(result.toStringAsFixed(2));
   }
 
-  double totalTaxes() {
-    return (brokerage() +
-        transactionCharges() +
+  static double totalTaxes(double buy, int quantity, double sell, String commodity) {
+    double totalTaxes =  (brokerage(buy, quantity, sell, commodity) +
+        transactionCharges(buy, quantity, sell, commodity) +
         ClearingCharge() +
-        gst() +
-        ctt() +
-        sebiCharges() +
-        stampCharges());
+        gst(buy, quantity, sell, commodity) +
+        ctt(buy, quantity, sell, commodity) +
+        sebiCharges(buy, quantity, sell, commodity) +
+        stampCharges(buy, quantity, sell, commodity)) ;
+    return double.parse(totalTaxes.toStringAsFixed(2));
   }
 
-  double pointsToBreakeven() {
+  static double pointsToBreakeven(double buy, int quantity, double sell, String commodity) {
     String value = commodityMultiplierMap[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return (totalTaxes() / (quantity * multiplier));
+    return double.parse((totalTaxes(buy, quantity, sell, commodity) / (quantity * multiplier)).toStringAsFixed(2));
   }
 
-  double netProfit() {
+  static double netProfit(double buy, int quantity, double sell, String commodity) {
     String value = commodityMultiplierMap[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    return (((sell - buy) * quantity * multiplier) - totalTaxes());
+    return double.parse((((sell - buy) * quantity * multiplier) - totalTaxes(buy, quantity, sell, commodity)).toStringAsFixed(2));
   }
 }

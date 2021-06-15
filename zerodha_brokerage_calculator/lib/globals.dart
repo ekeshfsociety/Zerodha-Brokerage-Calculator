@@ -14,6 +14,7 @@ Map<String, dynamic> commodityStrikeMap = {
   "ZINC": '190,2.5'
 };
 
+/// Used in Future commodities.
 Map<String, dynamic> commodityMultiplierMap = {
   // "ALUMINI": '1000a',
   "ALUMINIUM": '5000a',
@@ -165,3 +166,4 @@ Map<String, dynamic> commoditiesStamp = {
   "SILVER": '0.10',
   "CASTORSEED": '0.50'
 };
+
