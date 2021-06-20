@@ -137,6 +137,7 @@ class EquityScreenState extends State<EquityScreen>
                 //Divider(color: Colors.grey,thickness: 1,),
                 Expanded(
                   child: TabBarView(
+                    controller: _tabController,
                     children: [
                       EquitiesCard(key: Key("1"),name: "Intraday Equity",),
                       EquitiesCard(key: Key("2"),name: "Delivery Equity",),
