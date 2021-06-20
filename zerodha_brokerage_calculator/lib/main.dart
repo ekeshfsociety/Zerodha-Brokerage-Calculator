@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:zerodha_brokerage_calculator/constants.dart';
+import 'package:zerodha_brokerage_calculator/screens/currencyScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/equityScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/homeScreen.dart';
 import 'package:zerodha_brokerage_calculator/widgets/category_card.dart';
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: EquityScreen(),
+      home: CurrencyScreen(),
     );
   }
 }
