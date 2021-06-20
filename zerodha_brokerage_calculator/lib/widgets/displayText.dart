@@ -20,18 +20,18 @@ class TextCards extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(color: Colors.white, fontSize: sy(12)),
+                    style: TextStyle(color: Colors.black, fontSize: sy(12)),
                   ),
                   Text(
                     value.toString(),
-                    style: TextStyle(color: Colors.white, fontSize: sy(12)),
+                    style: TextStyle(color: Colors.black, fontSize: sy(12)),
                   ),
                 ],
               ),
             ),
             Divider(
               thickness: 0.5,
-              color: Colors.white,
+              color: Colors.black,
             )
           ],
         ),
