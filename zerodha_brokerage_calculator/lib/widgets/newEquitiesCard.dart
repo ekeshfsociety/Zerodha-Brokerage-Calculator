@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
@@ -262,8 +263,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
                         Container(
                           width: 88,
                           child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(),
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _buy,
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
@@ -296,8 +298,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
                         Container(
                           width: 88,
                           child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(),
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _sell,
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
@@ -330,8 +333,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
                         Container(
                           width: 88,
                           child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(),
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _quantity,
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
