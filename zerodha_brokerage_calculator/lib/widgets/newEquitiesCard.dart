@@ -23,12 +23,6 @@ class _EquitiesCardState extends State<EquitiesCard> {
   TextEditingController _sell = new TextEditingController(text: "1100");
   TextEditingController _quantity = new TextEditingController(text: "400");
   int index = 0;
-  List functions = [
-    IntraDayEquity,
-    DeliveryEquity,
-    FuturesEquity,
-    OptionsEquity
-  ];
   int _sliding = 0;
   double buy;
   double sell;
