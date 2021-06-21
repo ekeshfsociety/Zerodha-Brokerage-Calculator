@@ -19,8 +19,8 @@ class OptionsCommodities {
     double result = 0;
     String value = commodityOptMultiplier[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
-    double brokerage_buy = (((buy + strikePrice) * quantity * multiplier * 0.0003) > 20) ? 20 : (((buy + strikePrice) * quantity * multiplier * 0.0003) > 20) ;
-    double brokerage_sell = (((sell + strikePrice) * quantity * multiplier * 0.0003) > 20) ? 20 : (((sell + strikePrice) * quantity * multiplier * 0.0003) > 20) ;
+    double brokerage_buy = (((buy + strikePrice) * quantity * multiplier * 0.0003) > 20) ? 20 : (((buy + strikePrice) * quantity * multiplier * 0.0003)) ;
+    double brokerage_sell = (((sell + strikePrice) * quantity * multiplier * 0.0003) > 20) ? 20 : (((sell + strikePrice) * quantity * multiplier * 0.0003)) ;
     result = brokerage_buy + brokerage_sell ;
     return double.parse(result.toStringAsFixed(2));
   }
