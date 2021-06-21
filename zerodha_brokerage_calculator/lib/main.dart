@@ -62,6 +62,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    SizedBox(height: 20),
                     Text(
                       greeting(),
                       style: TextStyle(
@@ -69,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: sx(50),
                           fontFamily: 'Cairo'),
                     ),
+                    SizedBox(height: 30),
                     Text(
                       'Happy Trading',
                       style: TextStyle(
@@ -77,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                           fontFamily: 'Cairo'),
                     ),
                     SizedBox(
-                      height: sy(30.0),
+                      height: sy(40.0),
                     ),
                     Expanded(
                       child: StaggeredGridView.count(
