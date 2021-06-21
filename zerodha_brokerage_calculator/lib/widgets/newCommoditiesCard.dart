@@ -4,9 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:zerodha_brokerage_calculator/calculations/futuresCommodities.dart';
-import 'package:zerodha_brokerage_calculator/calculations/futuresCurrency.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsCommodities.dart';
-import 'package:zerodha_brokerage_calculator/calculations/optionsCurrency.dart';
 import 'displayText.dart';
 
 class CommoditiesCard extends StatefulWidget {
@@ -26,7 +24,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
   TextEditingController _sell;
 
   TextEditingController _quantity = new TextEditingController(text: "1");
-  TextEditingController _strikePrice = new TextEditingController(text: "60.75");
+  TextEditingController _strikePrice = new TextEditingController(text: "400");
   int index = 0;
   int _sliding = 0;
   double buy;
@@ -35,7 +33,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
   bool isNse = true;
   double strikePrice = 60.75;
 
-  String futureCommodityChoose, optionsCommodityChoose;
+  String futureCommodityChoose = "ALUMINIUM", optionsCommodityChoose = "COPPER";
 
   List commodityFutures = [
     'ALUMINIUM',
@@ -70,9 +68,9 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
   void initState() {
     super.initState();
     _buy = new TextEditingController(
-        text: (widget.isFutures) ? "49.2525" : "0.0625");
+        text: (widget.isFutures) ? "110" : "1");
     _sell = new TextEditingController(
-        text: (widget.isFutures) ? "49.2725" : "0.0675");
+        text: (widget.isFutures) ? "112" : "2");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
@@ -309,38 +307,6 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           ),
                         ),
                       ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 30),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 70),
-                      child: CupertinoSlidingSegmentedControl(
-                          children: {
-                            0: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 50),
-                              child: Text(
-                                'NSE',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                            1: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 50),
-                              child: Text(
-                                'BSE',
-                                style: TextStyle(color: Colors.black),
-                              ),
-                            ),
-                          },
-                          groupValue: _sliding,
-                          onValueChanged: (newValue) {
-                            setState(() {
-                              _sliding = newValue;
-                              (newValue == 0)
-                                  ? (isNse = true)
-                                  : (isNse = false);
-                            });
-                          }),
                     ),
                   ),
                   SizedBox(height: 20),

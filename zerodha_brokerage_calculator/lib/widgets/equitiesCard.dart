@@ -85,9 +85,9 @@ class _EquitiesState extends State<Equities> {
       case 1:
         return DeliveryEquity.transactionCharges(buy, sell, quantity);
       case 2:
-        return FuturesEquity.transactionCharges(buy, sell, quantity);
+        //return FuturesEquity.transactionCharges(buy, sell, quantity);
       case 3:
-        return OptionsEquity.transactionCharges(buy, sell, quantity);
+        //return OptionsEquity.transactionCharges(buy, sell, quantity);
       default:
         return IntraDayEquity.transactionCharges(buy, sell, quantity);
     }
@@ -115,9 +115,9 @@ class _EquitiesState extends State<Equities> {
       case 1:
         return DeliveryEquity.gst(buy, sell, quantity);
       case 2:
-        return FuturesEquity.gst(buy, sell, quantity);
+        //return FuturesEquity.gst(buy, sell, quantity);
       case 3:
-        return OptionsEquity.gst(buy, sell, quantity);
+        //return OptionsEquity.gst(buy, sell, quantity);
       default:
         return IntraDayEquity.gst(buy, sell, quantity);
     }
@@ -160,9 +160,9 @@ class _EquitiesState extends State<Equities> {
       case 1:
         return DeliveryEquity.totalTaxes(buy, sell, quantity);
       case 2:
-        return FuturesEquity.totalTaxes(buy, sell, quantity);
+        //return FuturesEquity.totalTaxes(buy, sell, quantity);
       case 3:
-        return OptionsEquity.totalTaxes(buy, sell, quantity);
+        //return OptionsEquity.totalTaxes(buy, sell, quantity);
       default:
         return IntraDayEquity.totalTaxes(buy, sell, quantity);
     }
@@ -175,9 +175,9 @@ class _EquitiesState extends State<Equities> {
       case 1:
         return DeliveryEquity.breakeven(buy, sell, quantity);
       case 2:
-        return FuturesEquity.breakeven(buy, sell, quantity);
+        //return FuturesEquity.breakeven(buy, sell, quantity);
       case 3:
-        return OptionsEquity.breakeven(buy, sell, quantity);
+        //return OptionsEquity.breakeven(buy, sell, quantity);
       default:
         return IntraDayEquity.breakeven(buy, sell, quantity);
     }
@@ -190,9 +190,9 @@ class _EquitiesState extends State<Equities> {
       case 1:
         return DeliveryEquity.netProfit(buy, sell, quantity);
       case 2:
-        return FuturesEquity.netProfit(buy, sell, quantity);
+        //return FuturesEquity.netProfit(buy, sell, quantity);
       case 3:
-        return OptionsEquity.netProfit(buy, sell, quantity);
+       // return OptionsEquity.netProfit(buy, sell, quantity);
       default:
         return IntraDayEquity.netProfit(buy, sell, quantity);
     }

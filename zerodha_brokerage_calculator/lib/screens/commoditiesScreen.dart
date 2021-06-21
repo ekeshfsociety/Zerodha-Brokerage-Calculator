@@ -1,12 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
-import 'package:zerodha_brokerage_calculator/widgets/displayText.dart';
 import 'package:zerodha_brokerage_calculator/widgets/newCommoditiesCard.dart';
 
 class CommoditiesScreen extends StatefulWidget {
@@ -21,77 +15,6 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
   var selectedValue = 0;
   double tabWidth = 0;
   TabController _tabController;
-  int index = 0;
-  TextEditingController _buy = new TextEditingController(text: "49.2525");
-  TextEditingController _sell = new TextEditingController(text: "49.2725");
-  TextEditingController _quantity = new TextEditingController(text: "1");
-  TextEditingController _strikePrice = new TextEditingController(text: "60.75");
-  int _sliding = 0;
-  double buy;
-  double sell;
-  int quantity;
-  bool isNse = true;
-  double strikePrice = 60.75;
-
-  String futureCommodityChoose, optionsCommodityChoose;
-
-  List commodityFutures = [
-    'ALUMINIUM',
-    'CARDAMOM',
-    'CASTORSEED',
-    'COPPER',
-    'COTTON',
-    'CPO',
-    'CRUDEOIL',
-    'GOLD',
-    'GOLDGUINEA',
-    'GOLDM',
-    'GOLDPETAL',
-    'KAPAS',
-    'LEAD',
-    'MCXBULLDEX',
-    'MCXMETLDEX',
-    'MENTHOIL',
-    'NATURALGAS',
-    'NICKEL',
-    'PEPPER',
-    'RBDPMOLEIN',
-    'RUBBER',
-    'SILVER',
-    'SILVERM',
-    'SILVERMIC',
-    'ZINC'
-  ];
-  List commodityOptions = ['COPPER', 'CRUDEOIL', 'GOLD', 'SILVER', 'ZINC'];
-
-  @override
-  void initState() {
-    super.initState();
-    buy = double.parse(_buy.text);
-    sell = double.parse(_sell.text);
-    quantity = int.parse(_quantity.text);
-    _buy.addListener(() {
-      setState(() {
-        buy = double.parse(_buy.text.isEmpty ? "0" : _buy.text);
-      });
-    });
-    _sell.addListener(() {
-      setState(() {
-        sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
-      });
-    });
-    _quantity.addListener(() {
-      setState(() {
-        quantity = int.parse(_quantity.text.isEmpty ? "0" : _quantity.text);
-      });
-    });
-    _strikePrice.addListener(() {
-      setState(() {
-        strikePrice =
-            double.parse(_strikePrice.text.isEmpty ? "0" : _strikePrice.text);
-      });
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,11 +27,9 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
               backgroundColor: Colors.white,
               elevation: 0,
               centerTitle: true,
-              title: Center(
-                child: Text(
-                  "Commodities",
-                  style: TextStyle(fontSize: sy(20), color: Colors.blue),
-                ),
+              title: Text(
+                "Commodities",
+                style: TextStyle(fontSize: sy(20), color: Colors.blue),
               ),
             ),
             body: Container(
