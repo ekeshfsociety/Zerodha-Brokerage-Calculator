@@ -25,6 +25,7 @@ String greeting() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kBackgroundColor,
         textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: CurrencyScreen(),
+      home: HomeScreen(),
     );
   }
 }
@@ -101,7 +102,11 @@ class HomeScreen extends StatelessWidget {
                             child: CategoryCard(
                               title: "Equity",
                               svgSrc: "assets/icons/equity.svg",
-                              press: () {},
+                              press: () {
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => new EquityScreen()
+                                ));
+                              },
                             ),
                           ),
                           Neumorphic(
@@ -115,7 +120,11 @@ class HomeScreen extends StatelessWidget {
                             child: CategoryCard(
                               title: "Commodities",
                               svgSrc: "assets/icons/commodity.svg",
-                              press: () {},
+                              press: () {
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => new CommoditiesScreen()
+                                ));
+                              },
                             ),
                           ),
                           Neumorphic(
@@ -129,7 +138,11 @@ class HomeScreen extends StatelessWidget {
                             child: CategoryCard(
                               title: "Currency",
                               svgSrc: "assets/icons/exchange.svg",
-                              press: () {},
+                              press: () {
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => new CurrencyScreen()
+                                ));
+                              },
                             ),
                           ),
                         ],
