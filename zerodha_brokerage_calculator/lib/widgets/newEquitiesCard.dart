@@ -6,7 +6,6 @@ import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
-import 'package:zerodha_brokerage_calculator/colors.dart';
 
 import 'displayText.dart';
 

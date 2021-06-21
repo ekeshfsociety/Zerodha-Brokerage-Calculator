@@ -137,6 +137,7 @@ class _CurrencyScreenState extends State<CurrencyScreen>
                       ]),
                 ),
                 Expanded(child: TabBarView(
+                  controller: _tabController,
                   children: [
                     SingleChildScrollView(
                       child: Container(
