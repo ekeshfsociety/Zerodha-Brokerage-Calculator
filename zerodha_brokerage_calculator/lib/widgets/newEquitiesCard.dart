@@ -19,8 +19,8 @@ class EquitiesCard extends StatefulWidget {
 }
 
 class _EquitiesCardState extends State<EquitiesCard> {
-  TextEditingController _buy = new TextEditingController(text: "1000");
-  TextEditingController _sell = new TextEditingController(text: "1100");
+  TextEditingController _buy ;
+  TextEditingController _sell;
   TextEditingController _quantity = new TextEditingController(text: "400");
   int index = 0;
   int _sliding = 0;
@@ -196,6 +196,8 @@ class _EquitiesCardState extends State<EquitiesCard> {
   @override
   void initState() {
     super.initState();
+    _buy = new TextEditingController(text: widget.name == "F&O - Options" ? "100": "1000");
+    _sell = new TextEditingController(text: widget.name == "F&O - Options" ? "110": "1100");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
