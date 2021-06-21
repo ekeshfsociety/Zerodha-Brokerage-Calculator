@@ -7,34 +7,66 @@ import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
 import 'package:zerodha_brokerage_calculator/widgets/displayText.dart';
-import 'package:zerodha_brokerage_calculator/widgets/newEquitiesCard.dart';
+import 'package:zerodha_brokerage_calculator/widgets/newCurrencyCard.dart';
 
-class EquityScreen extends StatefulWidget {
-  EquityScreen({Key key}) : super(key: key);
+class CurrencyScreen extends StatefulWidget {
+  const CurrencyScreen({Key key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => EquityScreenState();
+  _CurrencyScreenState createState() => _CurrencyScreenState();
 }
 
-class EquityScreenState extends State<EquityScreen>
+class _CurrencyScreenState extends State<CurrencyScreen>
     with TickerProviderStateMixin {
-  GlobalKey key = GlobalKey();
+  var selectedValue = 0;
+  double tabWidth = 0;
   TabController _tabController;
+  int index = 0;
+  TextEditingController _buy = new TextEditingController(text: "49.2525");
+  TextEditingController _sell = new TextEditingController(text: "49.2725");
+  TextEditingController _quantity = new TextEditingController(text: "1");
+  TextEditingController _strikePrice = new TextEditingController(text: "60.75");
+  int _sliding = 0;
+  double buy;
+  double sell;
+  int quantity;
+  bool isNse = true;
+  double strikePrice = 60.75;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    buy = double.parse(_buy.text);
+    sell = double.parse(_sell.text);
+    quantity = int.parse(_quantity.text);
+    _buy.addListener(() {
+      setState(() {
+        buy = double.parse(_buy.text.isEmpty ? "0" : _buy.text);
+      });
+    });
+    _sell.addListener(() {
+      setState(() {
+        sell = double.parse(_sell.text.isEmpty ? "0" : _sell.text);
+      });
+    });
+    _quantity.addListener(() {
+      setState(() {
+        quantity = int.parse(_quantity.text.isEmpty ? "0" : _quantity.text);
+      });
+    });
+    _strikePrice.addListener(() {
+      setState(() {
+        strikePrice =
+            double.parse(_strikePrice.text.isEmpty ? "0" : _strikePrice.text);
+      });
+    });
   }
-
-  var selectedValue = 0;
-  double tabWidth = 0;
 
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
       return DefaultTabController(
-        length: 4,
+        length: 2,
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -42,15 +74,11 @@ class EquityScreenState extends State<EquityScreen>
             elevation: 0,
             centerTitle: true,
             title: Center(
-                child: Text(
-              "Equities",
-              style: TextStyle(fontSize: sy(20), color: Colors.blue),
-            )),
-            actions: [
-              // Image(image: AssetImage("assets/icons/settings-dark.svg")),
-              Icon(Icons.settings, color: Colors.white),
-              Icon(Icons.eleven_mp, color: Colors.transparent)
-            ],
+              child: Text(
+                "Currency",
+                style: TextStyle(fontSize: sy(20), color: Colors.blue),
+              ),
+            ),
           ),
           body: Container(
             child: Column(
@@ -84,43 +112,18 @@ class EquityScreenState extends State<EquityScreen>
                             padding: EdgeInsets.only(bottom: sy(5)),
                             //width: 140,
                             child: Text(
-                              "Intraday",
+                              "Futures",
                               style: TextStyle(
-                                  color: _tabController.index == 0
-                                      ? Colors.blue
-                                      : Colors.black,
+                                  color: Colors.black,
+                                  // color: _tabController.index == 0
+                                  //     ? Colors.blue
+                                  //     : Colors.black,
                                   fontSize: sy(18)),
                             ),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: sx(15)),
-                          child: Container(
-                            alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.only(bottom: sy(5)),
-                            //width: 140,
-                            child: Text(
-                              "Delivery",
-                              style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: sx(10)),
-                          child: Container(
-                            alignment: Alignment.bottomLeft,
-                            padding: EdgeInsets.only(bottom: sy(5)),
-                            //width: 140,
-                            child: Text(
-                              "Futures",
-                              style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: sx(10)),
                           child: Container(
                             alignment: Alignment.bottomLeft,
                             padding: EdgeInsets.only(bottom: sy(5)),
@@ -134,24 +137,26 @@ class EquityScreenState extends State<EquityScreen>
                         ),
                       ]),
                 ),
-                //Divider(color: Colors.grey,thickness: 1,),
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      EquitiesCard(key: Key("1"),name: "Intraday Equity",),
-                      EquitiesCard(key: Key("2"),name: "Delivery Equity",),
-                      EquitiesCard(key: Key("3"),name: "F&O - Futures",),
-                      EquitiesCard(key: Key("4"),name: "F&O - Options",),
+                      CurrencyCard(
+                          key: Key("1"),
+                          name: "Currency Futures",
+                          isFutures: true),
+                      CurrencyCard(
+                          key: Key("2"),
+                          name: "Currency Options",
+                          isFutures: false),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
         ),
       );
     });
-    ;
   }
 }
