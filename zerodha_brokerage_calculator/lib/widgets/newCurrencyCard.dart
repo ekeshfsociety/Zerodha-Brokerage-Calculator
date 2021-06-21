@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:zerodha_brokerage_calculator/calculations/futuresCurrency.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsCurrency.dart';
-
 import 'displayText.dart';
 
 class CurrencyCard extends StatefulWidget {
@@ -19,8 +19,8 @@ class CurrencyCard extends StatefulWidget {
 }
 
 class _CurrencyCardState extends State<CurrencyCard> {
-  TextEditingController _buy = new TextEditingController(text: "49.2525");
-  TextEditingController _sell = new TextEditingController(text: "49.2725");
+  TextEditingController _buy ;
+  TextEditingController _sell ;
   TextEditingController _quantity = new TextEditingController(text: "1");
   TextEditingController _strikePrice = new TextEditingController(text: "60.75");
   int index = 0;
@@ -34,6 +34,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
   @override
   void initState() {
     super.initState();
+    _buy = new TextEditingController(text: (widget.isFutures) ? "49.2525" : "0.0625");
+    _sell = new TextEditingController(text: (widget.isFutures) ? "49.2725" : "0.0675");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
@@ -87,9 +89,48 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        !(widget.key == Key('1')) ?
                         Container(
                           width: 88,
                           child: TextFormField(
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
+                            controller: _strikePrice,
+                            obscureText: false,
+                            style: TextStyle(color: Colors.black),
+                            decoration: InputDecoration(
+                              contentPadding:
+                              EdgeInsets.all(10.0),
+                              focusColor: Colors.black,
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Colors.black,
+                                ),
+                              ),
+                              border: OutlineInputBorder(
+                                borderRadius:
+                                BorderRadius.circular(10),
+                                borderSide: BorderSide(
+                                  color: Colors.black,
+                                ),
+                                gapPadding: 2,
+                              ),
+                              labelText: 'STRIKE PRICE',
+                              labelStyle:
+                              TextStyle(color: Colors.black),
+                            ),
+                          ),
+                        ) : Container() ,
+                        Container(
+                          width: 88,
+                          child: TextFormField(
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             controller: _buy,
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
@@ -121,6 +162,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         Container(
                           width: 88,
                           child: TextFormField(
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             controller: _sell,
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
@@ -152,6 +195,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         Container(
                           width: 88,
                           child: TextFormField(
+                            keyboardType: TextInputType.numberWithOptions(decimal: true),
+                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             controller: _quantity,
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
@@ -220,7 +265,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                         name: "Turnover",
-                        value: widget.isFutures
+                        value: (widget.key == Key('1'))
                             ? FuturesCurrency.turnover(buy, quantity, sell)
                             : OptionsCurrency.turnover(buy, quantity, sell)),
                   ),
@@ -228,7 +273,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                         name: "Brokerage",
-                        value: widget.isFutures
+                        value: (widget.key == Key('1'))
                             ? FuturesCurrency.brokerage(buy, quantity, sell)
                             : OptionsCurrency.brokerage(
                                 buy, quantity, sell, strikePrice)),
@@ -237,7 +282,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Exchange Transaction Charge',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.transactionCharges(
                               buy, quantity, sell, isNse)
                           : OptionsCurrency.transactionCharges(
@@ -248,7 +293,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Clearing Charge',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.ClearingCharge()
                           : OptionsCurrency.ClearingCharge(),
                     ),
@@ -257,7 +302,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'GST',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.gst(buy, quantity, sell, isNse)
                           : OptionsCurrency.gst(
                               buy, quantity, sell, strikePrice, isNse),
@@ -267,7 +312,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'SEBI charges',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.sebiCharges(buy, quantity, sell)
                           : OptionsCurrency.sebiCharges(buy, quantity, sell),
                     ),
@@ -276,7 +321,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Stamp Duty',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.stampCharges(buy, quantity)
                           : OptionsCurrency.stampCharges(buy, quantity),
                     ),
@@ -285,7 +330,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Total Tax',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.totalTaxes(
                               buy, quantity, sell, isNse)
                           : OptionsCurrency.totalTaxes(
@@ -296,7 +341,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Points to Breakeven',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.breakeven(
                               buy, quantity, sell, isNse)
                           : OptionsCurrency.breakeven(
@@ -307,7 +352,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Pips to breakeven',
-                      value: widget.isFutures
+                      value: (widget.key == Key('1'))
                           ? FuturesCurrency.pipsToBreakEven(
                               buy, quantity, sell, isNse)
                           : OptionsCurrency.pipsToBreakeven(
@@ -324,7 +369,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           style: TextStyle(color: Colors.black, fontSize: 35),
                         ),
                         Text(
-                          (widget.isFutures
+                          ((widget.key == Key('1'))
                                   ? FuturesCurrency.netProfit(
                                       buy, quantity, sell, isNse)
                                   : OptionsCurrency.netProfit(
