@@ -54,6 +54,7 @@ class EquityScreenState extends State<EquityScreen>
           ),
           body: Container(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   height: sy(38),

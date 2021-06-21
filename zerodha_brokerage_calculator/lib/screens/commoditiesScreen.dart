@@ -118,6 +118,7 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
             ),
             body: Container(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
                     height: sy(38),

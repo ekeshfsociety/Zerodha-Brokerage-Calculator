@@ -82,9 +82,11 @@ class _CurrencyScreenState extends State<CurrencyScreen>
           ),
           body: Container(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   height: sy(38),
+                  width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border(
