@@ -11,7 +11,9 @@ class CurrencyCard extends StatefulWidget {
   final Key key;
   final String name;
   final bool isFutures;
+
   CurrencyCard({this.key, this.name, this.isFutures});
+
   @override
   _CurrencyCardState createState() => _CurrencyCardState();
 }
@@ -83,8 +85,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           width: 88,
@@ -106,16 +107,14 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
                                 gapPadding: 2,
                               ),
                               labelText: 'BUY',
-                              labelStyle:
-                              TextStyle(color: Colors.black),
+                              labelStyle: TextStyle(color: Colors.black),
                             ),
                           ),
                         ),
@@ -139,16 +138,14 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
                                 gapPadding: 2,
                               ),
                               labelText: 'SELL',
-                              labelStyle:
-                              TextStyle(color: Colors.black),
+                              labelStyle: TextStyle(color: Colors.black),
                             ),
                           ),
                         ),
@@ -172,22 +169,19 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
                                 gapPadding: 2,
                               ),
                               labelText: 'QUANTITY',
-                              labelStyle:
-                              TextStyle(color: Colors.black),
+                              labelStyle: TextStyle(color: Colors.black),
                             ),
                           ),
                         ),
                       ],
                     ),
-
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
@@ -196,21 +190,17 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       child: CupertinoSlidingSegmentedControl(
                           children: {
                             0: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: 50),
                               child: Text(
                                 'NSE',
-                                style:
-                                TextStyle(color: Colors.black),
+                                style: TextStyle(color: Colors.black),
                               ),
                             ),
                             1: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: 50),
                               child: Text(
                                 'BSE',
-                                style:
-                                TextStyle(color: Colors.black),
+                                style: TextStyle(color: Colors.black),
                               ),
                             ),
                           },
@@ -218,117 +208,143 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           onValueChanged: (newValue) {
                             setState(() {
                               _sliding = newValue;
+                              (newValue == 0)
+                                  ? (isNse = true)
+                                  : (isNse = false);
                             });
                           }),
                     ),
                   ),
                   SizedBox(height: 20),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                         name: "Turnover",
-                        value: widget.isFutures ? FuturesCurrency.turnover(buy, quantity, sell) : OptionsCurrency.turnover(buy, quantity, sell)),
+                        value: widget.isFutures
+                            ? FuturesCurrency.turnover(buy, quantity, sell)
+                            : OptionsCurrency.turnover(buy, quantity, sell)),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                         name: "Brokerage",
-                        value:
-                        widget.isFutures ? FuturesCurrency.brokerage(buy, quantity, sell) : OptionsCurrency.brokerage(buy, quantity, sell, strikePrice)),
+                        value: widget.isFutures
+                            ? FuturesCurrency.brokerage(buy, quantity, sell)
+                            : OptionsCurrency.brokerage(
+                                buy, quantity, sell, strikePrice)),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Exchange Transaction Charge',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.transactionCharges(
+                              buy, quantity, sell, isNse)
+                          : OptionsCurrency.transactionCharges(
+                              buy, quantity, sell, isNse),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Clearing Charge',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.ClearingCharge()
+                          : OptionsCurrency.ClearingCharge(),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'GST',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.gst(buy, quantity, sell, isNse)
+                          : OptionsCurrency.gst(
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'SEBI charges',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.sebiCharges(buy, quantity, sell)
+                          : OptionsCurrency.sebiCharges(buy, quantity, sell),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Stamp Duty',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.stampCharges(buy, quantity)
+                          : OptionsCurrency.stampCharges(buy, quantity),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Total Tax',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.totalTaxes(
+                              buy, quantity, sell, isNse)
+                          : OptionsCurrency.totalTaxes(
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Points to Breakeven',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.breakeven(
+                              buy, quantity, sell, isNse)
+                          : OptionsCurrency.breakeven(
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(
-                    padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextCards(
                       name: 'Pips to breakeven',
-                      value: 1,
+                      value: widget.isFutures
+                          ? FuturesCurrency.pipsToBreakEven(
+                              buy, quantity, sell, isNse)
+                          : OptionsCurrency.pipsToBreakeven(
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 35, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
                     child: Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Net P&L",
-                          style: TextStyle(
-                              color: Colors.black, fontSize: 35),
+                          style: TextStyle(color: Colors.black, fontSize: 35),
                         ),
                         Text(
-                          '100',
+                          (widget.isFutures
+                                  ? FuturesCurrency.netProfit(
+                                      buy, quantity, sell, isNse)
+                                  : OptionsCurrency.netProfit(
+                                      buy, quantity, sell, strikePrice, isNse))
+                              .toString(),
                           style: TextStyle(
-                            color: Colors.greenAccent,
-                            fontSize: 35,
-                          ),
+                              color: (widget.isFutures
+                                          ? FuturesCurrency.netProfit(
+                                              buy, quantity, sell, isNse)
+                                          : OptionsCurrency.netProfit(
+                                              buy,
+                                              quantity,
+                                              sell,
+                                              strikePrice,
+                                              isNse)) >=
+                                      0
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
+                              fontSize: sy(18)),
                         ),
-                        // Text(
-                        //   returnPL().toString(),
-                        //   style: TextStyle(
-                        //       color: returnPL() >= 0
-                        //           ? Colors.greenAccent
-                        //           : Colors.redAccent,
-                        //       fontSize: sy(18)),
-                        // ),
                       ],
                     ),
                   ),
