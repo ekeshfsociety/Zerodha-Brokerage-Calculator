@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #3">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1txWULlZNXOSu6vyfoldty9CdJr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="" />
+      <created>1623711235832</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1623711235832</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Future Commodities calculations updated">
+      <created>1623760340193</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623760340194</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Options Commodities calculations updated ; only future commodities left">
+      <created>1623786654311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623786654311</updated>
+    </task>
+    <task id="LOCAL-00003" summary="All calculations updated">
+      <created>1623788459706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623788459706</updated>
+    </task>
+    <task id="LOCAL-00004" summary="New Equity Page">
+      <created>1624156445184</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1624156445184</updated>
+    </task>
+    <task id="LOCAL-00005" summary="New Currency Page">
+      <created>1624159989985</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1624159989985</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Minor Changes">
+      <created>1624170127770</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1624170127770</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Minor Changes, Regex and Options default value pending">
+      <created>1624170564567</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1624170564567</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Commodities Screen Initial Work Done">
+      <created>1624216141620</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624216141620</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes">
+      <created>1624281689597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624281689597</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Bug Fixes #3">
+      <created>1624286244399</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624286244399</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Future Commodities calculations updated" />
+    <MESSAGE value="Options Commodities calculations updated ; only future commodities left" />
+    <MESSAGE value="All calculations updated" />
+    <MESSAGE value="New Equity Page" />
+    <MESSAGE value="New Currency Page" />
+    <MESSAGE value="Minor Changes" />
+    <MESSAGE value="Minor Changes, Regex and Options default value pending" />
+    <MESSAGE value="Commodities Screen Initial Work Done" />
+    <MESSAGE value="Changes" />
+    <MESSAGE value="Bug Fixes #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623711658340">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711658340" />
+    <state x="371" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1623711649763">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711649763" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1623711376583">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711376583" />
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom" timestamp="1624286341645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="123" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624215809123" />
+    <state width="1877" height="200" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286341645" />
+    <state width="1237" height="398" key="GridCell.Tab.0.bottom/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
+    <state width="1877" height="200" key="GridCell.Tab.0.center" timestamp="1624286341645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="123" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624215809123" />
+    <state width="1877" height="200" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286341645" />
+    <state width="1237" height="398" key="GridCell.Tab.0.center/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331220" />
+    <state width="1877" height="200" key="GridCell.Tab.0.left" timestamp="1624286341645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="123" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624215809121" />
+    <state width="1877" height="200" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286341645" />
+    <state width="1237" height="398" key="GridCell.Tab.0.left/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331217" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right" timestamp="1624286341645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1237" height="123" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624215809123" />
+    <state width="1877" height="200" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286341645" />
+    <state width="1237" height="398" key="GridCell.Tab.0.right/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
+    <state x="213" y="0" key="SettingsEditor" timestamp="1624286448232">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1778" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624278285726" />
+    <state x="213" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286448232" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711549511" />
+    <state x="3093" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623752888437" />
+    <state x="553" y="254" key="Vcs.Push.Dialog.v2" timestamp="1624286250860">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1551" y="146" key="Vcs.Push.Dialog.v2/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624237266234" />
+    <state x="553" y="254" key="Vcs.Push.Dialog.v2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286250860" />
+    <state x="3433" y="254" key="Vcs.Push.Dialog.v2/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623760350458" />
+    <state x="-1462" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1624278267836">
+      <screen x="-1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="-1462" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624278267836" />
+    <state x="687" y="390" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624062613723" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712284899" />
+    <state x="3567" y="390" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623752508981" />
+    <state x="3503" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1623754674916">
+      <screen x="2880" y="0" width="1920" height="1040" />
+    </state>
+    <state x="3503" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623754674916" />
+  </component>
+</project>
