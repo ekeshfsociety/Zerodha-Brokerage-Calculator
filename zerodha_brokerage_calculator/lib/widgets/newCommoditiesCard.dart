@@ -133,29 +133,19 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             if(widget.key == Key('1'))
                               {
                                 futureCommodityChoose = newValue;
-                                _buy = TextEditingController(
-                                  text: commodityBuySellMap[futureCommodityChoose].split(',')[0]
-                                );
+                                _buy.text = commodityBuySellMap[futureCommodityChoose].split(',')[0];
                                 buy = double.parse(_buy.text);
-                                _sell = TextEditingController(
-                                    text: commodityBuySellMap[futureCommodityChoose].split(',')[1]
-                                );
+                                _sell.text = commodityBuySellMap[futureCommodityChoose].split(',')[1];
                                 sell = double.parse(_sell.text);
                               }
                             else
                               {
                                 optionsCommodityChoose = newValue;
-                                _buy = TextEditingController(
-                                    text: commodityBuySellMap[optionsCommodityChoose].split(',')[0]
-                                );
+                                _buy.text = commodityBuySellMap[optionsCommodityChoose].split(',')[0];
                                 buy = double.parse(_buy.text);
-                                _sell = TextEditingController(
-                                    text: commodityBuySellMap[optionsCommodityChoose].split(',')[1]
-                                );
+                                _sell.text = commodityBuySellMap[optionsCommodityChoose].split(',')[1];
                                 sell = double.parse(_sell.text);
-                                _strikePrice = TextEditingController(
-                                    text: commodityStrikeMap[optionsCommodityChoose].split(',')[0]
-                                );
+                                _strikePrice.text = commodityStrikeMap[optionsCommodityChoose].split(',')[0];
                                 strikePrice = double.parse(_strikePrice.text);
                               }
                           });
@@ -210,10 +200,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                     new FilteringTextInputFormatter.allow(
                                         RegExp(r"[0-9.]")),
                                   ],
-                                  onChanged: (text) {
-                                    _strikePrice = TextEditingController(text: text);
-                                    strikePrice = double.parse(_strikePrice.text);
-                                  },
+                                  // onChanged: (text) {
+                                  //   _strikePrice = TextEditingController(text: text);
+                                  //   strikePrice = double.parse(_strikePrice.text);
+                                  // },
                                   textInputAction: TextInputAction.next,
                                   onEditingComplete: () => node.nextFocus(),
                                   controller: _strikePrice,
@@ -250,10 +240,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            onChanged: (text) {
-                              _buy = TextEditingController(text: text);
-                              buy = double.parse(_buy.text);
-                            },
+                            // onChanged: (text) {
+                            //   _buy = TextEditingController(text: text);
+                            //   buy = double.parse(_buy.text);
+                            // },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.nextFocus(),
                             controller: _buy,
@@ -289,10 +279,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            onChanged: (text) {
-                              _sell = TextEditingController(text: text);
-                              sell = double.parse(_sell.text);
-                            },
+                            // onChanged: (text) {
+                            //   _sell = TextEditingController(text: text);
+                            //   sell = double.parse(_sell.text);
+                            // },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.nextFocus(),
                             controller: _sell,
@@ -328,10 +318,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            onChanged: (text) {
-                              _quantity = TextEditingController(text: text);
-                              quantity = int.parse(_quantity.text);
-                            },
+                            // onChanged: (text) {
+                            //   _quantity = TextEditingController(text: text);
+                            //   quantity = int.parse(_quantity.text);
+                            // },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.unfocus(),
                             controller: _quantity,
