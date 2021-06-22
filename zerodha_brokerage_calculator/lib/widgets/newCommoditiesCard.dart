@@ -133,11 +133,11 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             if(widget.key == Key('1'))
                               {
                                 futureCommodityChoose = newValue;
-                                _buy = new TextEditingController(
+                                _buy = TextEditingController(
                                   text: commodityBuySellMap[futureCommodityChoose].split(',')[0]
                                 );
                                 buy = double.parse(_buy.text);
-                                _sell = new TextEditingController(
+                                _sell = TextEditingController(
                                     text: commodityBuySellMap[futureCommodityChoose].split(',')[1]
                                 );
                                 sell = double.parse(_sell.text);
@@ -145,15 +145,15 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             else
                               {
                                 optionsCommodityChoose = newValue;
-                                _buy = new TextEditingController(
+                                _buy = TextEditingController(
                                     text: commodityBuySellMap[optionsCommodityChoose].split(',')[0]
                                 );
                                 buy = double.parse(_buy.text);
-                                _sell = new TextEditingController(
+                                _sell = TextEditingController(
                                     text: commodityBuySellMap[optionsCommodityChoose].split(',')[1]
                                 );
                                 sell = double.parse(_sell.text);
-                                _strikePrice = new TextEditingController(
+                                _strikePrice = TextEditingController(
                                     text: commodityStrikeMap[optionsCommodityChoose].split(',')[0]
                                 );
                                 strikePrice = double.parse(_strikePrice.text);
@@ -211,7 +211,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   onChanged: (text) {
-                                    _strikePrice = new TextEditingController(text: text);
+                                    _strikePrice = TextEditingController(text: text);
                                     strikePrice = double.parse(_strikePrice.text);
                                   },
                                   textInputAction: TextInputAction.next,
@@ -251,7 +251,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             onChanged: (text) {
-                              _buy = new TextEditingController(text: text);
+                              _buy = TextEditingController(text: text);
                               buy = double.parse(_buy.text);
                             },
                             textInputAction: TextInputAction.next,
@@ -290,7 +290,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             onChanged: (text) {
-                              _sell = new TextEditingController(text: text);
+                              _sell = TextEditingController(text: text);
                               sell = double.parse(_sell.text);
                             },
                             textInputAction: TextInputAction.next,
@@ -329,7 +329,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             onChanged: (text) {
-                              _quantity = new TextEditingController(text: text);
+                              _quantity = TextEditingController(text: text);
                               quantity = int.parse(_quantity.text);
                             },
                             textInputAction: TextInputAction.next,

@@ -22,28 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #7, Buy Sell Controller now working 👍">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/All excercise  option 1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Excrecises.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Hamburger.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Lock.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Meditation.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Meditation_women_small.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Settings.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/calendar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/gym.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/meditation_bg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/menu.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/pilates_gpdb.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/yoga.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/yoga_women.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/meditation_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/profits.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/undraw_pilates_gpdb.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/bottom_nav_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/search_bar.dart" beforeDir="false" />
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #8">
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624321270180</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Bug Fixes #8">
+      <created>1624358769310</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624358769310</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +221,8 @@
     <MESSAGE value="Bug Fixes #6" />
     <MESSAGE value="Bug Fixes #7, Buy Sell Controller not working" />
     <MESSAGE value="Bug Fixes #7, Buy Sell Controller now working " />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #7, Buy Sell Controller now working " />
+    <MESSAGE value="Bug Fixes #8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #8" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623711658340">
