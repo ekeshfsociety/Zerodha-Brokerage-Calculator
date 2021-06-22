@@ -25,7 +25,6 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
   TextEditingController _quantity = new TextEditingController(text: "1");
   TextEditingController _strikePrice;
   int index = 0;
-  int _sliding = 0;
   double buy;
   double sell;
   int quantity;
@@ -137,9 +136,11 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 _buy = new TextEditingController(
                                   text: commodityBuySellMap[futureCommodityChoose].split(',')[0]
                                 );
+                                buy = double.parse(_buy.text);
                                 _sell = new TextEditingController(
                                     text: commodityBuySellMap[futureCommodityChoose].split(',')[1]
                                 );
+                                sell = double.parse(_sell.text);
                               }
                             else
                               {
@@ -147,12 +148,15 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 _buy = new TextEditingController(
                                     text: commodityBuySellMap[optionsCommodityChoose].split(',')[0]
                                 );
+                                buy = double.parse(_buy.text);
                                 _sell = new TextEditingController(
                                     text: commodityBuySellMap[optionsCommodityChoose].split(',')[1]
                                 );
+                                sell = double.parse(_sell.text);
                                 _strikePrice = new TextEditingController(
                                     text: commodityStrikeMap[optionsCommodityChoose].split(',')[0]
                                 );
+                                strikePrice = double.parse(_strikePrice.text);
                               }
                           });
                         },

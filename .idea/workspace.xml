@@ -22,10 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #5">
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #6">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624309244029</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bug Fixes #6">
+      <created>1624315160854</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1624315160854</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,7 +195,8 @@
     <MESSAGE value="Bug Fixes #3" />
     <MESSAGE value="Reducing code for Commodities Section, Multiple Errors right now." />
     <MESSAGE value="Bug Fixes #5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #5" />
+    <MESSAGE value="Bug Fixes #6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #6" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623711658340">
@@ -203,29 +211,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711376583" />
-    <state width="1877" height="225" key="GridCell.Tab.0.bottom" timestamp="1624314857426">
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom" timestamp="1624318241365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624314857426" />
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624318241365" />
     <state width="1237" height="398" key="GridCell.Tab.0.bottom/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
-    <state width="1877" height="225" key="GridCell.Tab.0.center" timestamp="1624314857426">
+    <state width="1877" height="225" key="GridCell.Tab.0.center" timestamp="1624318241365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624314857426" />
+    <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624318241365" />
     <state width="1237" height="398" key="GridCell.Tab.0.center/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331220" />
-    <state width="1877" height="225" key="GridCell.Tab.0.left" timestamp="1624314857426">
+    <state width="1877" height="225" key="GridCell.Tab.0.left" timestamp="1624318241365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624314857426" />
+    <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624318241365" />
     <state width="1237" height="398" key="GridCell.Tab.0.left/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331217" />
-    <state width="1877" height="225" key="GridCell.Tab.0.right" timestamp="1624314857426">
+    <state width="1877" height="225" key="GridCell.Tab.0.right" timestamp="1624318241365">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624314857426" />
+    <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624318241365" />
     <state width="1237" height="398" key="GridCell.Tab.0.right/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state x="213" y="0" key="SettingsEditor" timestamp="1624286448232">
       <screen x="0" y="0" width="1920" height="1040" />

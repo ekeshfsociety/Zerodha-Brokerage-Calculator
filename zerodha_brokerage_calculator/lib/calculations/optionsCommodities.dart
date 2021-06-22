@@ -39,7 +39,6 @@ class OptionsCommodities {
   }
 
   static double ctt(double buy, int quantity, double sell, String commodity, double strikePrice) {
-    double result = 0;
     String value = commodityOptMultiplier[commodity];
     double multiplier = double.parse(value.substring(0, (value.length - 1)));
     return double.parse((0.0005 * sell * quantity * multiplier).toStringAsFixed(2));
