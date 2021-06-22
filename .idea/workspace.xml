@@ -22,10 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #6">
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #7, Buy Sell Controller not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624315160854</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Bug Fixes #7, Buy Sell Controller not working">
+      <created>1624320436018</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1624320436018</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +201,8 @@
     <MESSAGE value="Reducing code for Commodities Section, Multiple Errors right now." />
     <MESSAGE value="Bug Fixes #5" />
     <MESSAGE value="Bug Fixes #6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #6" />
+    <MESSAGE value="Bug Fixes #7, Buy Sell Controller not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #7, Buy Sell Controller not working" />
   </component>
   <component name="WindowStateProjectService">
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623711658340">

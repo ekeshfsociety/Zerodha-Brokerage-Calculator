@@ -210,6 +210,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                     new FilteringTextInputFormatter.allow(
                                         RegExp(r"[0-9.]")),
                                   ],
+                                  onChanged: (text) {
+                                    _strikePrice = new TextEditingController(text: text);
+                                    strikePrice = double.parse(_strikePrice.text);
+                                  },
                                   textInputAction: TextInputAction.next,
                                   onEditingComplete: () => node.nextFocus(),
                                   controller: _strikePrice,
@@ -246,6 +250,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
+                            onChanged: (text) {
+                              _buy = new TextEditingController(text: text);
+                              buy = double.parse(_buy.text);
+                            },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.nextFocus(),
                             controller: _buy,
@@ -281,6 +289,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
+                            onChanged: (text) {
+                              _sell = new TextEditingController(text: text);
+                              sell = double.parse(_sell.text);
+                            },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.nextFocus(),
                             controller: _sell,
@@ -316,6 +328,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
+                            onChanged: (text) {
+                              _quantity = new TextEditingController(text: text);
+                              quantity = int.parse(_quantity.text);
+                            },
                             textInputAction: TextInputAction.next,
                             onEditingComplete: () => node.unfocus(),
                             controller: _quantity,
