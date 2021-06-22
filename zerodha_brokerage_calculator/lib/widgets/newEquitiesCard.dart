@@ -245,25 +245,25 @@ class _EquitiesCardState extends State<EquitiesCard> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    height: 80,
+                    height: sy(50),
                     color: Color(0xFFF1F1F1),
                     child: Center(
                       child: Text(
                         widget.name,
                         style: GoogleFonts.lato(
-                          fontSize: 40,
+                          fontSize: sy(25),
                         ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding: EdgeInsets.only(top: sy(15)),
                     child: Row(
                       mainAxisAlignment:
                       MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _buy,
@@ -285,7 +285,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               border: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.circular(10),
+                                BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -298,7 +298,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _sell,
@@ -320,7 +320,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               border: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.circular(10),
+                                BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -333,7 +333,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _quantity,
@@ -355,7 +355,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               border: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.circular(10),
+                                BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -371,14 +371,14 @@ class _EquitiesCardState extends State<EquitiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: EdgeInsets.only(top: sy(17)),
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 70),
                       child: CupertinoSlidingSegmentedControl(
                           children: {
                             0: Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 50),
+                                  horizontal: sx(50)),
                               child: Text(
                                 'NSE',
                                 style:
@@ -387,7 +387,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                             ),
                             1: Padding(
                               padding: EdgeInsets.symmetric(
-                                  horizontal: 50),
+                                  horizontal: sx(50)),
                               child: Text(
                                 'BSE',
                                 style:
@@ -408,10 +408,10 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           }),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(13)),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Turnover',
                       value: returnTurnOver(),
@@ -419,7 +419,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Brokerage',
                       value: returnBrokerage(),
@@ -427,7 +427,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'STT Total',
                       value: returnSTT(),
@@ -435,7 +435,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Exchange Transaction Charge',
                       value: returnTxnCharge(),
@@ -443,7 +443,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Clearing Charge',
                       value: returnClearCharge(),
@@ -451,7 +451,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'GST',
                       value: returnGST(),
@@ -459,7 +459,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Stamp Duty',
                       value: returnStamp(),
@@ -467,7 +467,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Total Tax',
                       value: returnTotalTax(),
@@ -475,7 +475,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 20),
+                    EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Points to Breakeven',
                       value: returnBreakeven(),
@@ -483,7 +483,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: 35, vertical: 0),
+                        horizontal: sx(65), vertical: sy(0)),
                     child: Row(
                       mainAxisAlignment:
                       MainAxisAlignment.spaceBetween,
@@ -491,7 +491,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                         Text(
                           "Net P&L",
                           style: TextStyle(
-                              color: Colors.black, fontSize: 35),
+                              color: Colors.black, fontSize: sy(22)),
                         ),
                         Text(
                           returnPL().toString(),
@@ -499,12 +499,12 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               color: returnPL() >= 0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
-                              fontSize: sy(18)),
+                              fontSize: sy(20)),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(15)),
                 ],
               ),
             ),

@@ -109,13 +109,13 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    height: 80,
+                    height: sy(50),
                     color: Color(0xFFF1F1F1),
                     child: Center(
                       child: Text(
                         widget.name,
                         style: GoogleFonts.lato(
-                          fontSize: 40,
+                          fontSize: sy(25),
                         ),
                       ),
                     ),
@@ -123,7 +123,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Container(
-                      width: 122,
+                      width: sx(110),
                       child: DropdownButtonFormField(
                         value: (widget.key == Key('1'))
                             ? futureCommodityChoose
@@ -173,7 +173,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             ),
                           ),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(sy(10)),
                             borderSide: BorderSide(
                               color: Colors.black,
                             ),
@@ -186,13 +186,13 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding: EdgeInsets.only(top: sy(10)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         !(widget.key == Key('1'))
                             ? Container(
-                                width: 88,
+                          width: sx(115),
                                 child: TextFormField(
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: true),
@@ -223,7 +223,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                       ),
                                     ),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderRadius: BorderRadius.circular(sy(10)),
                                       borderSide: BorderSide(
                                         color: Colors.black,
                                       ),
@@ -236,7 +236,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                               )
                             : Container(),
                         Container(
-                          width: 88,
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -263,7 +263,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -275,7 +275,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -302,7 +302,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -314,7 +314,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -341,7 +341,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -355,9 +355,9 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(13)),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Turnover",
                         value: (widget.key == Key('1'))
@@ -367,7 +367,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 optionsCommodityChoose, strikePrice)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Brokerage",
                         value: (widget.key == Key('1'))
@@ -377,7 +377,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                 optionsCommodityChoose, strikePrice)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Exchange Transaction Charge',
                       value: (widget.key == Key('1'))
@@ -387,7 +387,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Clearing Charge',
                       value: (widget.key == Key('1'))
@@ -396,7 +396,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'GST',
                       value: (widget.key == Key('1'))
@@ -407,7 +407,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'CTT',
                       value: (widget.key == Key('1'))
@@ -418,7 +418,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'SEBI charges',
                       value: (widget.key == Key('1'))
@@ -429,7 +429,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Stamp Duty',
                       value: (widget.key == Key('1'))
@@ -440,7 +440,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Total Tax',
                       value: (widget.key == Key('1'))
@@ -451,7 +451,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Points to Breakeven',
                       value: (widget.key == Key('1'))
@@ -462,13 +462,13 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Net P&L",
-                          style: TextStyle(color: Colors.black, fontSize: 35),
+                          style: TextStyle(color: Colors.black, fontSize: sy(22)),
                         ),
                         Text(
                           ((widget.key == Key('1'))
@@ -497,12 +497,12 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                       0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
-                              fontSize: sy(18)),
+                              fontSize: sy(20)),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(15)),
                 ],
               ),
             ),

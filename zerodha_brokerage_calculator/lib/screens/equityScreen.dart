@@ -1,12 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:zerodha_brokerage_calculator/calculations/deliveryEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/futuresEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/intradayEquity.dart';
-import 'package:zerodha_brokerage_calculator/calculations/optionsEquity.dart';
-import 'package:zerodha_brokerage_calculator/widgets/displayText.dart';
 import 'package:zerodha_brokerage_calculator/widgets/newEquitiesCard.dart';
 
 class EquityScreen extends StatefulWidget {

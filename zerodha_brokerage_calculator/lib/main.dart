@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    SizedBox(height: 20),
+                    SizedBox(height: sy(20)),
                     Text(
                       greeting(),
                       style: TextStyle(
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: sx(50),
                           fontFamily: 'Cairo'),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: sy(15)),
                     Text(
                       'Happy Trading',
                       style: TextStyle(

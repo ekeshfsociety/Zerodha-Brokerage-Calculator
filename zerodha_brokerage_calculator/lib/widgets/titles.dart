@@ -15,7 +15,7 @@ class TitleText extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(sy(10)),
-          border: Border.all(color: selected ? Color(0xff003566) : Colors.white,width: 2.0)
+          border: Border.all(color: selected ? Color(0xff003566) : Colors.white,width: sx(2.0))
         ),
         child: Center(
          child: Text(

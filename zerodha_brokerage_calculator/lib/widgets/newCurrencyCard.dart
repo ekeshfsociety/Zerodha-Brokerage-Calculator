@@ -73,25 +73,25 @@ class _CurrencyCardState extends State<CurrencyCard> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    height: 80,
+                    height: sy(50),
                     color: Color(0xFFF1F1F1),
                     child: Center(
                       child: Text(
                         widget.name,
                         style: GoogleFonts.lato(
-                          fontSize: 40,
+                          fontSize: sy(25),
                         ),
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 15),
+                    padding: EdgeInsets.only(top: sy(15)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         !(widget.key == Key('1')) ?
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -114,7 +114,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                               ),
                               border: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.circular(10),
+                                BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -127,7 +127,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           ),
                         ) : Container() ,
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -148,7 +148,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -160,7 +160,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -181,7 +181,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -193,7 +193,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           ),
                         ),
                         Container(
-                          width: 88,
+                          width: sx(110),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
@@ -214,7 +214,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 ),
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(sy(10)),
                                 borderSide: BorderSide(
                                   color: Colors.black,
                                 ),
@@ -229,20 +229,20 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: EdgeInsets.only(top: sy(17)),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 70),
+                      padding: EdgeInsets.symmetric(horizontal: sx(70)),
                       child: CupertinoSlidingSegmentedControl(
                           children: {
                             0: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: sx(50)),
                               child: Text(
                                 'NSE',
                                 style: TextStyle(color: Colors.black),
                               ),
                             ),
                             1: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 50),
+                              padding: EdgeInsets.symmetric(horizontal: sx(50)),
                               child: Text(
                                 'BSE',
                                 style: TextStyle(color: Colors.black),
@@ -260,9 +260,9 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           }),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(13)),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Turnover",
                         value: (widget.key == Key('1'))
@@ -270,7 +270,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             : OptionsCurrency.turnover(buy, quantity, sell)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Brokerage",
                         value: (widget.key == Key('1'))
@@ -279,7 +279,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                 buy, quantity, sell, strikePrice)),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Exchange Transaction Charge',
                       value: (widget.key == Key('1'))
@@ -290,7 +290,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Clearing Charge',
                       value: (widget.key == Key('1'))
@@ -299,7 +299,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'GST',
                       value: (widget.key == Key('1'))
@@ -309,7 +309,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'SEBI charges',
                       value: (widget.key == Key('1'))
@@ -318,7 +318,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Stamp Duty',
                       value: (widget.key == Key('1'))
@@ -327,7 +327,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Total Tax',
                       value: (widget.key == Key('1'))
@@ -338,7 +338,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Points to Breakeven',
                       value: (widget.key == Key('1'))
@@ -349,7 +349,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                       name: 'Pips to breakeven',
                       value: (widget.key == Key('1'))
@@ -360,7 +360,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 35, vertical: 0),
+                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -388,12 +388,12 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
-                              fontSize: sy(18)),
+                              fontSize: sy(20)),
                         ),
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: sy(15)),
                 ],
               ),
             ),

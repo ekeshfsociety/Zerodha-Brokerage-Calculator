@@ -30,7 +30,7 @@ class TextCards extends StatelessWidget {
               ),
             ),
             Divider(
-              thickness: 0.5,
+              thickness: sy(0.3),
               color: Colors.black,
             )
           ],

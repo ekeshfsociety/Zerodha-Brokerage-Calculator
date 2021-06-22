@@ -22,13 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #8">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Leading App Bar Icon">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/commoditiesScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/commoditiesScreen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/currencyScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/currencyScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/equityScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/equityScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/displayText.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/displayText.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/titles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/titles.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624358769310</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Leading App Bar Icon">
+      <created>1624383145889</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624383145889</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +243,8 @@
     <MESSAGE value="Bug Fixes #7, Buy Sell Controller not working" />
     <MESSAGE value="Bug Fixes #7, Buy Sell Controller now working " />
     <MESSAGE value="Bug Fixes #8" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #8" />
+    <MESSAGE value="Leading App Bar Icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Leading App Bar Icon" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624382244340">
@@ -251,31 +261,31 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711376583" />
-    <state width="1237" height="138" key="GridCell.Tab.0.bottom" timestamp="1624383064736">
+    <state width="1237" height="138" key="GridCell.Tab.0.bottom" timestamp="1624387341453">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="138" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
+    <state width="1237" height="138" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624387341453" />
     <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.bottom/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state width="970" height="347" key="GridCell.Tab.0.bottom/0.25.1440.801@0.25.1440.801" timestamp="1624359525214" />
-    <state width="1237" height="138" key="GridCell.Tab.0.center" timestamp="1624383064736">
+    <state width="1237" height="138" key="GridCell.Tab.0.center" timestamp="1624387341453">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="138" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
+    <state width="1237" height="138" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624387341453" />
     <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.center/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331220" />
     <state width="970" height="347" key="GridCell.Tab.0.center/0.25.1440.801@0.25.1440.801" timestamp="1624359525213" />
-    <state width="1237" height="138" key="GridCell.Tab.0.left" timestamp="1624383064736">
+    <state width="1237" height="138" key="GridCell.Tab.0.left" timestamp="1624387341453">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="138" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
+    <state width="1237" height="138" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624387341453" />
     <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371933" />
     <state width="1237" height="398" key="GridCell.Tab.0.left/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331217" />
     <state width="970" height="347" key="GridCell.Tab.0.left/0.25.1440.801@0.25.1440.801" timestamp="1624359525211" />
-    <state width="1237" height="138" key="GridCell.Tab.0.right" timestamp="1624383064736">
+    <state width="1237" height="138" key="GridCell.Tab.0.right" timestamp="1624387341453">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="138" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
+    <state width="1237" height="138" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624387341453" />
     <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.right/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state width="970" height="347" key="GridCell.Tab.0.right/0.25.1440.801@0.25.1440.801" timestamp="1624359525213" />
@@ -292,10 +302,10 @@
     <state x="-1551" y="146" key="Vcs.Push.Dialog.v2/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298631277" />
     <state x="553" y="254" key="Vcs.Push.Dialog.v2/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624321279929" />
     <state x="3433" y="254" key="Vcs.Push.Dialog.v2/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623760350458" />
-    <state x="-1828" y="92" width="1096" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1624297904025">
+    <state x="-1828" y="92" width="1096" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1624385653317">
       <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state x="-1828" y="92" width="1096" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624297904025" />
+    <state x="-1828" y="92" width="1096" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624385653317" />
     <state x="515" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1624359193314">
       <screen x="0" y="25" width="1440" height="799" />
     </state>
