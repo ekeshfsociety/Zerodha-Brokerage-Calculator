@@ -21,11 +21,12 @@ class EquitiesCard extends StatefulWidget {
 class _EquitiesCardState extends State<EquitiesCard> {
   TextEditingController _buy ;
   TextEditingController _sell;
-  TextEditingController _quantity = new TextEditingController(text: "400");
+  TextEditingController _quantity;
   int index = 0;
   int _sliding = 0;
   double buy;
   double sell;
+  bool isNse = true;
   int quantity;
 
   double returnTurnOver() {
@@ -80,9 +81,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
       case 1:
         return DeliveryEquity.transactionCharges(buy, sell, quantity);
       case 2:
-        return FuturesEquity.transactionCharges(buy, sell, quantity);
+        return FuturesEquity.transactionCharges(buy, sell, quantity, isNse);
       case 3:
-        return OptionsEquity.transactionCharges(buy, sell, quantity);
+        return OptionsEquity.transactionCharges(buy, sell, quantity, isNse);
       default:
         return IntraDayEquity.transactionCharges(buy, sell, quantity);
     }
@@ -110,9 +111,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
       case 1:
         return DeliveryEquity.gst(buy, sell, quantity);
       case 2:
-        return FuturesEquity.gst(buy, sell, quantity);
+        return FuturesEquity.gst(buy, sell, quantity, isNse);
       case 3:
-        return OptionsEquity.gst(buy, sell, quantity);
+        return OptionsEquity.gst(buy, sell, quantity, isNse);
       default:
         return IntraDayEquity.gst(buy, sell, quantity);
     }
@@ -155,9 +156,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
       case 1:
         return DeliveryEquity.totalTaxes(buy, sell, quantity);
       case 2:
-        return FuturesEquity.totalTaxes(buy, sell, quantity);
+        return FuturesEquity.totalTaxes(buy, sell, quantity, isNse);
       case 3:
-        return OptionsEquity.totalTaxes(buy, sell, quantity);
+        return OptionsEquity.totalTaxes(buy, sell, quantity, isNse);
       default:
         return IntraDayEquity.totalTaxes(buy, sell, quantity);
     }
@@ -170,9 +171,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
       case 1:
         return DeliveryEquity.breakeven(buy, sell, quantity);
       case 2:
-        return FuturesEquity.breakeven(buy, sell, quantity);
+        return FuturesEquity.breakeven(buy, sell, quantity, isNse);
       case 3:
-        return OptionsEquity.breakeven(buy, sell, quantity);
+        return OptionsEquity.breakeven(buy, sell, quantity, isNse);
       default:
         return IntraDayEquity.breakeven(buy, sell, quantity);
     }
@@ -185,9 +186,9 @@ class _EquitiesCardState extends State<EquitiesCard> {
       case 1:
         return DeliveryEquity.netProfit(buy, sell, quantity);
       case 2:
-        return FuturesEquity.netProfit(buy, sell, quantity);
+        return FuturesEquity.netProfit(buy, sell, quantity, isNse);
       case 3:
-        return OptionsEquity.netProfit(buy, sell, quantity);
+        return OptionsEquity.netProfit(buy, sell, quantity, isNse);
       default:
         return IntraDayEquity.netProfit(buy, sell, quantity);
     }
@@ -198,6 +199,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
     super.initState();
     _buy = new TextEditingController(text: widget.name == "F&O - Options" ? "100": "1000");
     _sell = new TextEditingController(text: widget.name == "F&O - Options" ? "110": "1100");
+    _quantity = new TextEditingController(text: widget.name == "F&O - Options" ? "400": "400");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
@@ -397,6 +399,11 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           onValueChanged: (newValue) {
                             setState(() {
                               _sliding = newValue;
+                              if (newValue == 0) {
+                                isNse = true;
+                              } else {
+                                isNse = false;
+                              }
                             });
                           }),
                     ),

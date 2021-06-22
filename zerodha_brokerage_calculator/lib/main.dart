@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:relative_scale/relative_scale.dart';
-import 'package:zerodha_brokerage_calculator/constants.dart';
 import 'package:zerodha_brokerage_calculator/screens/commoditiesScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/currencyScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/equityScreen.dart';
-import 'package:zerodha_brokerage_calculator/screens/homeScreen.dart';
 import 'package:zerodha_brokerage_calculator/widgets/category_card.dart';
 
 void main() => runApp(MyApp());
@@ -62,6 +59,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    SizedBox(height: 20),
                     Text(
                       greeting(),
                       style: TextStyle(
@@ -69,6 +67,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: sx(50),
                           fontFamily: 'Cairo'),
                     ),
+                    SizedBox(height: 30),
                     Text(
                       'Happy Trading',
                       style: TextStyle(
@@ -77,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                           fontFamily: 'Cairo'),
                     ),
                     SizedBox(
-                      height: sy(30.0),
+                      height: sy(40.0),
                     ),
                     Expanded(
                       child: StaggeredGridView.count(
@@ -98,27 +97,11 @@ class HomeScreen extends StatelessWidget {
                               title: "Equity",
                               svgSrc: "assets/icons/equity.svg",
                               press: () {
-                                Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => new EquityScreen()
-                                ));
-                              },
-                            ),
-                          ),
-                          Neumorphic(
-                            style: NeumorphicStyle(
-                                shape: NeumorphicShape.concave,
-                                boxShape: NeumorphicBoxShape.roundRect(
-                                    BorderRadius.circular(sy(12))),
-                                depth: sy(8),
-                                lightSource: LightSource.topLeft,
-                                color: Colors.grey),
-                            child: CategoryCard(
-                              title: "Commodities",
-                              svgSrc: "assets/icons/commodity.svg",
-                              press: () {
-                                Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => new CommoditiesScreen()
-                                ));
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new EquityScreen()));
                               },
                             ),
                           ),
@@ -134,9 +117,31 @@ class HomeScreen extends StatelessWidget {
                               title: "Currency",
                               svgSrc: "assets/icons/exchange.svg",
                               press: () {
-                                Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => new CurrencyScreen()
-                                ));
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new CurrencyScreen()));
+                              },
+                            ),
+                          ),
+                          Neumorphic(
+                            style: NeumorphicStyle(
+                                shape: NeumorphicShape.concave,
+                                boxShape: NeumorphicBoxShape.roundRect(
+                                    BorderRadius.circular(sy(12))),
+                                depth: sy(8),
+                                lightSource: LightSource.topLeft,
+                                color: Colors.grey),
+                            child: CategoryCard(
+                              title: "Commodities",
+                              svgSrc: "assets/icons/commodity.svg",
+                              press: () {
+                                Navigator.push(
+                                    context,
+                                    new MaterialPageRoute(
+                                        builder: (context) =>
+                                            new CommoditiesScreen()));
                               },
                             ),
                           ),

@@ -18,14 +18,14 @@ class FuturesCommodities {
       brokerage_buy = 20;
     }
     else {
-      brokerage_buy = ((buy * multiplier *quantity * 0.0003) > 20) ? 20 : (buy * multiplier * 0.003 * quantity);
+      brokerage_buy = ((buy * multiplier *quantity * 0.0003) > 20) ? 20 : (buy * multiplier * 0.0003 * quantity);
     }
 
     if((sell * multiplier * quantity) > 200000) {
       brokerage_sell = 20;
     }
     else {
-      brokerage_sell = ((sell * multiplier *quantity * 0.0003) > 20) ? 20 : (sell * multiplier * 0.003 * quantity);
+      brokerage_sell = ((sell * multiplier *quantity * 0.0003) > 20) ? 20 : (sell * multiplier * 0.0003 * quantity);
     }
 
     return double.parse(((brokerage_buy + brokerage_sell)).toStringAsFixed(2));
@@ -49,7 +49,7 @@ class FuturesCommodities {
     if(commodity == 'CASTORSEED') {
       trans = (0.000005 * turnover(buy, quantity, sell, commodity));
     }
-    else if(commodity == 'RBDMOLEIN') {
+    else if(commodity == 'RBDMPOLEIN') {
       trans = (0.00001 * turnover(buy, quantity, sell, commodity));
     }
     else if(commodity == 'PEPPER') {
@@ -88,12 +88,12 @@ class FuturesCommodities {
 
   static double sebiCharges(double buy, int quantity, double sell, String commodity) {
     double turn = turnover(buy, quantity, sell, commodity);
-    double sebiTax = turn * 0.000001 ;
-    // String value = commodityGroupMap[commodity];
-    // String newValue = value.substring(value.length - 1);
-    // (newValue == 'a')
-    //     ? (sebiTax = turn * 0.0000001)
-    //     : (sebiTax = turn * 0.0000005);
+    double sebiTax = turn * 0.0000005 ;
+    String value = commodityGroupMap[commodity];
+    String newValue = value.substring(value.length - 1);
+    (newValue == 'a')
+        ? (sebiTax = turn * 0.0000001)
+        : (sebiTax = turn * 0.000001);
     return double.parse(sebiTax.toStringAsFixed(2));
   }
 
