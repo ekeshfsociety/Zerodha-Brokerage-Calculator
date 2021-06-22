@@ -39,6 +39,17 @@ class EquityScreenState extends State<EquityScreen>
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                  color: Colors.blue,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            ),
             elevation: 0,
             centerTitle: true,
             title: Center(

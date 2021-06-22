@@ -26,7 +26,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/commoditiesScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/commoditiesScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/currencyScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/currencyScreen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/equityScreen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/screens/equityScreen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +72,10 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" />
+      <method v="2" />
+    </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/main.dart" />
       <method v="2" />
@@ -231,50 +237,52 @@
     <option name="LAST_COMMIT_MESSAGE" value="Bug Fixes #8" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1623711658340">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624382244340">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
+    <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624382244340" />
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711658340" />
-    <state x="371" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1623711649763">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1549" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1624382208900">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
+    <state x="-1549" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624382208900" />
     <state x="371" y="130" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711649763" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1623711376583">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711376583" />
-    <state width="970" height="347" key="GridCell.Tab.0.bottom" timestamp="1624359525214">
-      <screen x="0" y="25" width="1440" height="801" />
+    <state width="1237" height="138" key="GridCell.Tab.0.bottom" timestamp="1624383064736">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="381" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
+    <state width="1237" height="138" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
     <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.bottom/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state width="970" height="347" key="GridCell.Tab.0.bottom/0.25.1440.801@0.25.1440.801" timestamp="1624359525214" />
-    <state width="970" height="347" key="GridCell.Tab.0.center" timestamp="1624359525213">
-      <screen x="0" y="25" width="1440" height="801" />
+    <state width="1237" height="138" key="GridCell.Tab.0.center" timestamp="1624383064736">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="381" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
+    <state width="1237" height="138" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
     <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.center/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331220" />
     <state width="970" height="347" key="GridCell.Tab.0.center/0.25.1440.801@0.25.1440.801" timestamp="1624359525213" />
-    <state width="970" height="347" key="GridCell.Tab.0.left" timestamp="1624359525211">
-      <screen x="0" y="25" width="1440" height="801" />
+    <state width="1237" height="138" key="GridCell.Tab.0.left" timestamp="1624383064736">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="381" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
+    <state width="1237" height="138" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
     <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371933" />
     <state width="1237" height="398" key="GridCell.Tab.0.left/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331217" />
     <state width="970" height="347" key="GridCell.Tab.0.left/0.25.1440.801@0.25.1440.801" timestamp="1624359525211" />
-    <state width="970" height="347" key="GridCell.Tab.0.right" timestamp="1624359525213">
-      <screen x="0" y="25" width="1440" height="801" />
+    <state width="1237" height="138" key="GridCell.Tab.0.right" timestamp="1624383064736">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="381" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
+    <state width="1237" height="138" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624383064736" />
     <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.right/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state width="970" height="347" key="GridCell.Tab.0.right/0.25.1440.801@0.25.1440.801" timestamp="1624359525213" />
-    <state x="213" y="0" key="SettingsEditor" timestamp="1624286448232">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1778" y="0" key="SettingsEditor" timestamp="1624382243748">
+      <screen x="-1920" y="0" width="1280" height="680" />
     </state>
-    <state x="-1778" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624278285726" />
+    <state x="-1778" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624382243748" />
     <state x="213" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624286448232" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711549511" />
     <state x="3093" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623752888437" />

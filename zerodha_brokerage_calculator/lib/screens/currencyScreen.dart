@@ -25,6 +25,17 @@ class _CurrencyScreenState extends State<CurrencyScreen>
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new),
+                  color: Colors.blue,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                );
+              },
+            ),
             centerTitle: true,
             title: Text(
               "Currency",
