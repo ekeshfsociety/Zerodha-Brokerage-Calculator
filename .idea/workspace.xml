@@ -23,37 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #7, Buy Sell Controller now working 👍">
-      <change afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/profits.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/All excercise  option 1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Excrecises.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Hamburger.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Lock.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Meditation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Meditation_women_small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/Settings.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/calendar.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/gym.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/meditation_bg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/menu.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/pilates_gpdb.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/yoga.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/icons/yoga_women.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/meditation_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/profits.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/assets/images/undraw_pilates_gpdb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/bottom_nav_bar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/search_bar.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,29 +249,29 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711376583" />
-    <state width="1877" height="225" key="GridCell.Tab.0.bottom" timestamp="1624322676549">
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom" timestamp="1624323371935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624322676549" />
+    <state width="1877" height="225" key="GridCell.Tab.0.bottom/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.bottom/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
-    <state width="1877" height="225" key="GridCell.Tab.0.center" timestamp="1624322676549">
+    <state width="1877" height="225" key="GridCell.Tab.0.center" timestamp="1624323371935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624322676549" />
+    <state width="1877" height="225" key="GridCell.Tab.0.center/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.center/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331220" />
-    <state width="1877" height="225" key="GridCell.Tab.0.left" timestamp="1624322676549">
+    <state width="1877" height="225" key="GridCell.Tab.0.left" timestamp="1624323371933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624322676549" />
+    <state width="1877" height="225" key="GridCell.Tab.0.left/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371933" />
     <state width="1237" height="398" key="GridCell.Tab.0.left/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331217" />
-    <state width="1877" height="225" key="GridCell.Tab.0.right" timestamp="1624322676549">
+    <state width="1877" height="225" key="GridCell.Tab.0.right" timestamp="1624323371935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1237" height="381" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624298697382" />
-    <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624322676549" />
+    <state width="1877" height="225" key="GridCell.Tab.0.right/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624323371935" />
     <state width="1237" height="398" key="GridCell.Tab.0.right/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623712331221" />
     <state x="213" y="0" key="SettingsEditor" timestamp="1624286448232">
       <screen x="0" y="0" width="1920" height="1040" />
