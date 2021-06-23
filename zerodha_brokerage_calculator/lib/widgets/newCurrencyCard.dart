@@ -99,8 +99,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding:
-                              EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -135,7 +134,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -168,7 +167,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -201,7 +200,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(

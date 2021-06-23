@@ -160,7 +160,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                     value: valueItem, child: Text(valueItem));
                               }).toList(),
                         decoration: InputDecoration(
-                          contentPadding: EdgeInsets.all(10.0),
+                          contentPadding: EdgeInsets.all(sy(10.0)),
                           focusColor: Colors.black,
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
@@ -210,7 +210,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.all(10.0),
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
                                     focusColor: Colors.black,
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
@@ -250,7 +250,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -289,7 +289,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -328,7 +328,7 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(

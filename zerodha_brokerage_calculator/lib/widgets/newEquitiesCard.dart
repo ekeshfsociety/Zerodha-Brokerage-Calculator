@@ -271,7 +271,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -306,7 +306,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
@@ -341,7 +341,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(10.0),
+                              contentPadding: EdgeInsets.all(sy(10.0)),
                               focusColor: Colors.black,
                               focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
