@@ -357,6 +357,61 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                   ),
                   SizedBox(height: sy(13)),
                   Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Net P&L",
+                          style: TextStyle(color: Colors.black, fontSize: sy(22)),
+                        ),
+                        Text(
+                          ((widget.key == Key('1'))
+                              ? FuturesCommodities.netProfit(buy, quantity,
+                              sell, futureCommodityChoose)
+                              : OptionsCommodities.netProfit(
+                              buy,
+                              quantity,
+                              sell,
+                              optionsCommodityChoose,
+                              strikePrice))
+                              .toString(),
+                          style: TextStyle(
+                              color: (widget.isFutures
+                                  ? FuturesCommodities.netProfit(
+                                  buy,
+                                  quantity,
+                                  sell,
+                                  futureCommodityChoose)
+                                  : OptionsCommodities.netProfit(
+                                  buy,
+                                  quantity,
+                                  sell,
+                                  optionsCommodityChoose,
+                                  strikePrice)) >=
+                                  0
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
+                              fontSize: sy(20)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: sy(10),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
+                    child: TextCards(
+                      name: 'Points to Breakeven',
+                      value: (widget.key == Key('1'))
+                          ? FuturesCommodities.pointsToBreakeven(
+                          buy, quantity, sell, futureCommodityChoose)
+                          : OptionsCommodities.pointsToBreakeven(buy, quantity,
+                          sell, optionsCommodityChoose, strikePrice),
+                    ),
+                  ),
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Turnover",
@@ -448,58 +503,6 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                               buy, quantity, sell, futureCommodityChoose)
                           : OptionsCommodities.totalTaxes(buy, quantity, sell,
                               optionsCommodityChoose, strikePrice),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
-                    child: TextCards(
-                      name: 'Points to Breakeven',
-                      value: (widget.key == Key('1'))
-                          ? FuturesCommodities.pointsToBreakeven(
-                              buy, quantity, sell, futureCommodityChoose)
-                          : OptionsCommodities.pointsToBreakeven(buy, quantity,
-                              sell, optionsCommodityChoose, strikePrice),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Net P&L",
-                          style: TextStyle(color: Colors.black, fontSize: sy(22)),
-                        ),
-                        Text(
-                          ((widget.key == Key('1'))
-                                  ? FuturesCommodities.netProfit(buy, quantity,
-                                      sell, futureCommodityChoose)
-                                  : OptionsCommodities.netProfit(
-                                      buy,
-                                      quantity,
-                                      sell,
-                                      optionsCommodityChoose,
-                                      strikePrice))
-                              .toString(),
-                          style: TextStyle(
-                              color: (widget.isFutures
-                                          ? FuturesCommodities.netProfit(
-                                              buy,
-                                              quantity,
-                                              sell,
-                                              futureCommodityChoose)
-                                          : OptionsCommodities.netProfit(
-                                              buy,
-                                              quantity,
-                                              sell,
-                                              optionsCommodityChoose,
-                                              strikePrice)) >=
-                                      0
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                              fontSize: sy(20)),
-                        ),
-                      ],
                     ),
                   ),
                   SizedBox(height: sy(15)),

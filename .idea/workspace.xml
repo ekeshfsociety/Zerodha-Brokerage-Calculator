@@ -22,13 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Scaling using Relative Builder">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20-06-2021_11_44_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20-06-2021_11_44__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" afterDir="false" />
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="currency card pl">
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623711235832</updated>
       <workItem from="1624731967695" duration="578000" />
-      <workItem from="1624821303794" duration="235000" />
+      <workItem from="1624821303794" duration="561000" />
     </task>
     <task id="LOCAL-00001" summary="Future Commodities calculations updated">
       <created>1623760340193</created>
@@ -219,7 +214,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624388806663</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="equities card pl">
+      <created>1624821782147</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1624821782147</updated>
+    </task>
+    <task id="LOCAL-00020" summary="currency card pl">
+      <created>1624821896160</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1624821896160</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +265,9 @@
     <MESSAGE value="Bug Fixes #8" />
     <MESSAGE value="Leading App Bar Icon" />
     <MESSAGE value="Scaling using Relative Builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Scaling using Relative Builder" />
+    <MESSAGE value="equities card pl" />
+    <MESSAGE value="currency card pl" />
+    <option name="LAST_COMMIT_MESSAGE" value="currency card pl" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624382244340">
