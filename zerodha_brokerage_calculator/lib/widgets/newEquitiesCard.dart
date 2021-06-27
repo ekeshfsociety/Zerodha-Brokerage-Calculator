@@ -410,6 +410,40 @@ class _EquitiesCardState extends State<EquitiesCard> {
                   ),
                   SizedBox(height: sy(13)),
                   Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: sx(65), vertical: sy(0)),
+                    child: Row(
+                      mainAxisAlignment:
+                      MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Net P&L",
+                          style: TextStyle(
+                              color: Colors.black, fontSize: sy(22)),
+                        ),
+                        Text(
+                          returnPL().toString(),
+                          style: TextStyle(
+                              color: returnPL() >= 0
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
+                              fontSize: sy(20)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: sy(10),
+                  ),
+                  Padding(
+                    padding:
+                    EdgeInsets.symmetric(horizontal: sx(20)),
+                    child: TextCards(
+                      name: 'Points to Breakeven',
+                      value: returnBreakeven(),
+                    ),
+                  ),
+                  Padding(
                     padding:
                     EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
@@ -471,37 +505,6 @@ class _EquitiesCardState extends State<EquitiesCard> {
                     child: TextCards(
                       name: 'Total Tax',
                       value: returnTotalTax(),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: sx(20)),
-                    child: TextCards(
-                      name: 'Points to Breakeven',
-                      value: returnBreakeven(),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: sx(65), vertical: sy(0)),
-                    child: Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Net P&L",
-                          style: TextStyle(
-                              color: Colors.black, fontSize: sy(22)),
-                        ),
-                        Text(
-                          returnPL().toString(),
-                          style: TextStyle(
-                              color: returnPL() >= 0
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                              fontSize: sy(20)),
-                        ),
-                      ],
                     ),
                   ),
                   SizedBox(height: sy(15)),
