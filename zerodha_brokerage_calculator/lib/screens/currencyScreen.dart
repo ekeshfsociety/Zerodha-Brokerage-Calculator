@@ -78,7 +78,7 @@ class _CurrencyScreenState extends State<CurrencyScreen>
                             child: Text(
                               "Futures",
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   // color: _tabController.index == 0
                                   //     ? Colors.blue
                                   //     : Colors.black,

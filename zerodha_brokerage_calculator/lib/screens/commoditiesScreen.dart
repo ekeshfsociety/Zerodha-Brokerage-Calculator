@@ -79,7 +79,7 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
                               child: Text(
                                 "Futures",
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.blue,
                                     // color: _tabController.index == 0
                                     //     ? Colors.blue
                                     //     : Colors.black,

@@ -6,6 +6,7 @@ import 'package:zerodha_brokerage_calculator/screens/commoditiesScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/currencyScreen.dart';
 import 'package:zerodha_brokerage_calculator/screens/equityScreen.dart';
 import 'package:zerodha_brokerage_calculator/widgets/category_card.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,9 +23,9 @@ String greeting() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Brokerage Calculator',
