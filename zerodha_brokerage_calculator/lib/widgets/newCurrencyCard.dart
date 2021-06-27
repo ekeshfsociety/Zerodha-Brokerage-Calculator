@@ -261,6 +261,65 @@ class _CurrencyCardState extends State<CurrencyCard> {
                   ),
                   SizedBox(height: sy(13)),
                   Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Net P&L",
+                          style: TextStyle(color: Colors.black, fontSize: 35),
+                        ),
+                        Text(
+                          ((widget.key == Key('1'))
+                              ? FuturesCurrency.netProfit(
+                              buy, quantity, sell, isNse)
+                              : OptionsCurrency.netProfit(
+                              buy, quantity, sell, strikePrice, isNse))
+                              .toString(),
+                          style: TextStyle(
+                              color: (widget.isFutures
+                                  ? FuturesCurrency.netProfit(
+                                  buy, quantity, sell, isNse)
+                                  : OptionsCurrency.netProfit(
+                                  buy,
+                                  quantity,
+                                  sell,
+                                  strikePrice,
+                                  isNse)) >=
+                                  0
+                                  ? Colors.greenAccent
+                                  : Colors.redAccent,
+                              fontSize: sy(20)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: sy(10),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
+                    child: TextCards(
+                      name: 'Points to Breakeven',
+                      value: (widget.key == Key('1'))
+                          ? FuturesCurrency.breakeven(
+                          buy, quantity, sell, isNse)
+                          : OptionsCurrency.breakeven(
+                          buy, quantity, sell, strikePrice, isNse),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
+                    child: TextCards(
+                      name: 'Pips to breakeven',
+                      value: (widget.key == Key('1'))
+                          ? FuturesCurrency.pipsToBreakEven(
+                          buy, quantity, sell, isNse)
+                          : OptionsCurrency.pipsToBreakeven(
+                          buy, quantity, sell, strikePrice, isNse),
+                    ),
+                  ),
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: sx(20)),
                     child: TextCards(
                         name: "Turnover",
@@ -334,62 +393,6 @@ class _CurrencyCardState extends State<CurrencyCard> {
                               buy, quantity, sell, isNse)
                           : OptionsCurrency.totalTaxes(
                               buy, quantity, sell, strikePrice, isNse),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
-                    child: TextCards(
-                      name: 'Points to Breakeven',
-                      value: (widget.key == Key('1'))
-                          ? FuturesCurrency.breakeven(
-                              buy, quantity, sell, isNse)
-                          : OptionsCurrency.breakeven(
-                              buy, quantity, sell, strikePrice, isNse),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(20)),
-                    child: TextCards(
-                      name: 'Pips to breakeven',
-                      value: (widget.key == Key('1'))
-                          ? FuturesCurrency.pipsToBreakEven(
-                              buy, quantity, sell, isNse)
-                          : OptionsCurrency.pipsToBreakeven(
-                              buy, quantity, sell, strikePrice, isNse),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Net P&L",
-                          style: TextStyle(color: Colors.black, fontSize: 35),
-                        ),
-                        Text(
-                          ((widget.key == Key('1'))
-                                  ? FuturesCurrency.netProfit(
-                                      buy, quantity, sell, isNse)
-                                  : OptionsCurrency.netProfit(
-                                      buy, quantity, sell, strikePrice, isNse))
-                              .toString(),
-                          style: TextStyle(
-                              color: (widget.isFutures
-                                          ? FuturesCurrency.netProfit(
-                                              buy, quantity, sell, isNse)
-                                          : OptionsCurrency.netProfit(
-                                              buy,
-                                              quantity,
-                                              sell,
-                                              strikePrice,
-                                              isNse)) >=
-                                      0
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                              fontSize: sy(20)),
-                        ),
-                      ],
                     ),
                   ),
                   SizedBox(height: sy(15)),
