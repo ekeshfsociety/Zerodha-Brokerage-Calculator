@@ -19,8 +19,8 @@ class CurrencyCard extends StatefulWidget {
 }
 
 class _CurrencyCardState extends State<CurrencyCard> {
-  TextEditingController _buy ;
-  TextEditingController _sell ;
+  TextEditingController _buy;
+  TextEditingController _sell;
   TextEditingController _quantity = new TextEditingController(text: "1");
   TextEditingController _strikePrice = new TextEditingController(text: "60.75");
   int index = 0;
@@ -34,8 +34,10 @@ class _CurrencyCardState extends State<CurrencyCard> {
   @override
   void initState() {
     super.initState();
-    _buy = new TextEditingController(text: (widget.isFutures) ? "49.2525" : "0.0625");
-    _sell = new TextEditingController(text: (widget.isFutures) ? "49.2725" : "0.0675");
+    _buy = new TextEditingController(
+        text: (widget.isFutures) ? "49.2525" : "0.0625");
+    _sell = new TextEditingController(
+        text: (widget.isFutures) ? "49.2725" : "0.0675");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
@@ -86,146 +88,283 @@ class _CurrencyCardState extends State<CurrencyCard> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: sy(15)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        !(widget.key == Key('1')) ?
-                        Container(
-                          width: sx(110),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            controller: _strikePrice,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                    child: !(widget.key == Key('1'))
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _strikePrice,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'STRIKE PRICE',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
                                 ),
                               ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _buy,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'BUY',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
                                 ),
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _sell,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'SELL',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
                                 ),
-                                gapPadding: 2,
                               ),
-                              labelText: 'STRIKE PRICE',
-                              labelStyle:
-                              TextStyle(color: Colors.black),
-                            ),
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _quantity,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'QUANTITY',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _buy,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'BUY',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _sell,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'SELL',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: sx(110),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  controller: _quantity,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'QUANTITY',
+                                    labelStyle: TextStyle(color: Colors.black),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ) : Container() ,
-                        Container(
-                          width: sx(110),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            controller: _buy,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                gapPadding: 2,
-                              ),
-                              labelText: 'BUY',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: sx(110),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            controller: _sell,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                gapPadding: 2,
-                              ),
-                              labelText: 'SELL',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: sx(110),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            controller: _quantity,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                gapPadding: 2,
-                              ),
-                              labelText: 'QUANTITY',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: sy(17)),
@@ -261,7 +400,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                   ),
                   SizedBox(height: sy(13)),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: sx(65), vertical: sy(0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -271,22 +411,22 @@ class _CurrencyCardState extends State<CurrencyCard> {
                         ),
                         Text(
                           ((widget.key == Key('1'))
-                              ? FuturesCurrency.netProfit(
-                              buy, quantity, sell, isNse)
-                              : OptionsCurrency.netProfit(
-                              buy, quantity, sell, strikePrice, isNse))
+                                  ? FuturesCurrency.netProfit(
+                                      buy, quantity, sell, isNse)
+                                  : OptionsCurrency.netProfit(
+                                      buy, quantity, sell, strikePrice, isNse))
                               .toString(),
                           style: TextStyle(
                               color: (widget.isFutures
-                                  ? FuturesCurrency.netProfit(
-                                  buy, quantity, sell, isNse)
-                                  : OptionsCurrency.netProfit(
-                                  buy,
-                                  quantity,
-                                  sell,
-                                  strikePrice,
-                                  isNse)) >=
-                                  0
+                                          ? FuturesCurrency.netProfit(
+                                              buy, quantity, sell, isNse)
+                                          : OptionsCurrency.netProfit(
+                                              buy,
+                                              quantity,
+                                              sell,
+                                              strikePrice,
+                                              isNse)) >=
+                                      0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
                               fontSize: sy(20)),
@@ -303,9 +443,9 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       name: 'Points to Breakeven',
                       value: (widget.key == Key('1'))
                           ? FuturesCurrency.breakeven(
-                          buy, quantity, sell, isNse)
+                              buy, quantity, sell, isNse)
                           : OptionsCurrency.breakeven(
-                          buy, quantity, sell, strikePrice, isNse),
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(
@@ -314,9 +454,9 @@ class _CurrencyCardState extends State<CurrencyCard> {
                       name: 'Pips to breakeven',
                       value: (widget.key == Key('1'))
                           ? FuturesCurrency.pipsToBreakEven(
-                          buy, quantity, sell, isNse)
+                              buy, quantity, sell, isNse)
                           : OptionsCurrency.pipsToBreakeven(
-                          buy, quantity, sell, strikePrice, isNse),
+                              buy, quantity, sell, strikePrice, isNse),
                     ),
                   ),
                   Padding(

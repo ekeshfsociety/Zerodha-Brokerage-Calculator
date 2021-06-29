@@ -293,7 +293,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'BUY',
                               labelStyle:
-                              TextStyle(color: Colors.black),
+                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
                             ),
                           ),
                         ),
@@ -328,7 +328,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'SELL',
                               labelStyle:
-                              TextStyle(color: Colors.black),
+                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
                             ),
                           ),
                         ),
@@ -363,7 +363,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'QUANTITY',
                               labelStyle:
-                              TextStyle(color: Colors.black),
+                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
                             ),
                           ),
                         ),
