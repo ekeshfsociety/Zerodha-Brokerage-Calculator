@@ -12,9 +12,16 @@ class CommoditiesScreen extends StatefulWidget {
 
 class _CommoditiesScreenState extends State<CommoditiesScreen>
     with TickerProviderStateMixin {
-  var selectedValue = 0;
-  double tabWidth = 0;
   TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+    _tabController.addListener(() {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +86,9 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
                               child: Text(
                                 "Futures",
                                 style: TextStyle(
-                                    color: Colors.blue,
-                                    // color: _tabController.index == 0
-                                    //     ? Colors.blue
-                                    //     : Colors.black,
+                                    color: _tabController.index == 0
+                                        ? Colors.blue
+                                        : Colors.black,
                                     fontSize: sy(18)),
                               ),
                             ),
@@ -96,7 +102,10 @@ class _CommoditiesScreenState extends State<CommoditiesScreen>
                               child: Text(
                                 "Options",
                                 style: TextStyle(
-                                    fontSize: sy(18), color: Colors.black),
+                                    fontSize: sy(18),
+                                  color: _tabController.index == 1
+                                      ? Colors.blue
+                                      : Colors.black,),
                               ),
                             ),
                           ),
