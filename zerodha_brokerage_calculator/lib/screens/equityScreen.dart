@@ -24,9 +24,6 @@ class EquityScreenState extends State<EquityScreen>
     });
   }
 
-  var selectedValue = 0;
-  double tabWidth = 0;
-
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
@@ -170,6 +167,5 @@ class EquityScreenState extends State<EquityScreen>
         ),
       );
     });
-    ;
   }
 }
