@@ -1,4 +1,4 @@
-import 'package:zerodha_brokerage_calculator/globals.dart';
+import 'package:zerodha_brokerage_calculator/utils/globals.dart';
 
 class FuturesCommodities {
 

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:zerodha_brokerage_calculator/calculations/futuresCommodities.dart';
 import 'package:zerodha_brokerage_calculator/calculations/optionsCommodities.dart';
-import '../globals.dart';
+import '../utils/globals.dart';
 import 'displayText.dart';
 
 class CommoditiesCard extends StatefulWidget {

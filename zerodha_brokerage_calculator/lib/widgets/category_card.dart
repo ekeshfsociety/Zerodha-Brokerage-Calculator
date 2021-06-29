@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:zerodha_brokerage_calculator/constants.dart';
 import 'package:relative_scale/relative_scale.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:zerodha_brokerage_calculator/utils/colors.dart';
 
 class CategoryCard extends StatelessWidget {
   final String svgSrc;
