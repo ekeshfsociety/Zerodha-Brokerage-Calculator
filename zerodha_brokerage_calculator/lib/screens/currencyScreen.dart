@@ -12,9 +12,17 @@ class CurrencyScreen extends StatefulWidget {
 
 class _CurrencyScreenState extends State<CurrencyScreen>
     with TickerProviderStateMixin {
-  var selectedValue = 0;
-  double tabWidth = 0;
   TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+    _tabController.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return RelativeBuilder(builder: (context, height, width, sy, sx) {
@@ -78,10 +86,9 @@ class _CurrencyScreenState extends State<CurrencyScreen>
                             child: Text(
                               "Futures",
                               style: TextStyle(
-                                  color: Colors.blue,
-                                  // color: _tabController.index == 0
-                                  //     ? Colors.blue
-                                  //     : Colors.black,
+                                  color: _tabController.index == 0
+                                      ? Colors.blue
+                                      : Colors.black,
                                   fontSize: sy(18)),
                             ),
                           ),
@@ -95,7 +102,10 @@ class _CurrencyScreenState extends State<CurrencyScreen>
                             child: Text(
                               "Options",
                               style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
+                                  fontSize: sy(18),
+                                color: _tabController.index == 1
+                                    ? Colors.blue
+                                    : Colors.black,),
                             ),
                           ),
                         ),
