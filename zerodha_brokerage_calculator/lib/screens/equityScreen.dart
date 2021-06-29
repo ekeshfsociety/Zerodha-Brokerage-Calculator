@@ -19,6 +19,9 @@ class EquityScreenState extends State<EquityScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
+    _tabController.addListener(() {
+      setState(() {});
+    });
   }
 
   var selectedValue = 0;
@@ -108,7 +111,10 @@ class EquityScreenState extends State<EquityScreen>
                             child: Text(
                               "Delivery",
                               style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
+                                  fontSize: sy(18),
+                                color: _tabController.index == 1
+                                    ? Colors.blue
+                                    : Colors.black,),
                             ),
                           ),
                         ),
@@ -121,7 +127,10 @@ class EquityScreenState extends State<EquityScreen>
                             child: Text(
                               "Futures",
                               style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
+                                  fontSize: sy(18),
+                                color: _tabController.index == 2
+                                    ? Colors.blue
+                                    : Colors.black,),
                             ),
                           ),
                         ),
@@ -134,7 +143,10 @@ class EquityScreenState extends State<EquityScreen>
                             child: Text(
                               "Options",
                               style: TextStyle(
-                                  fontSize: sy(18), color: Colors.black),
+                                  fontSize: sy(18),
+                                color: _tabController.index == 3
+                                    ? Colors.blue
+                                    : Colors.black,),
                             ),
                           ),
                         ),
