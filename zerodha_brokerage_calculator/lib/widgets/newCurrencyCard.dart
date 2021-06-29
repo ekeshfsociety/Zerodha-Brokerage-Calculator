@@ -250,7 +250,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Container(
-                                width: sx(110),
+                                width: sx(115),
                                 child: TextFormField(
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: true),
@@ -283,12 +283,12 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'BUY',
-                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
                                   ),
                                 ),
                               ),
                               Container(
-                                width: sx(110),
+                                width: sx(115),
                                 child: TextFormField(
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: true),
@@ -321,12 +321,12 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'SELL',
-                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
                                   ),
                                 ),
                               ),
                               Container(
-                                width: sx(110),
+                                width: sx(115),
                                 child: TextFormField(
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: true),
@@ -359,7 +359,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'QUANTITY',
-                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
                                   ),
                                 ),
                               ),
