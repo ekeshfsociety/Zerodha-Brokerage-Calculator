@@ -22,10 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="commodities screen tab color">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="equities card sizing">
       <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +90,7 @@
       <workItem from="1624826463364" duration="131000" />
       <workItem from="1624956747818" duration="3453000" />
       <workItem from="1624970271393" duration="2541000" />
-      <workItem from="1624981440841" duration="412000" />
+      <workItem from="1624981440841" duration="856000" />
     </task>
     <task id="LOCAL-00001" summary="Future Commodities calculations updated">
       <created>1623760340193</created>
@@ -269,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624965837337</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="equities card sizing">
+      <created>1624981995830</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1624981995830</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +293,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Future Commodities calculations updated" />
     <MESSAGE value="Options Commodities calculations updated ; only future commodities left" />
     <MESSAGE value="All calculations updated" />
     <MESSAGE value="New Equity Page" />
@@ -313,7 +317,8 @@
     <MESSAGE value="debugging" />
     <MESSAGE value="currency screen working" />
     <MESSAGE value="commodities screen tab color" />
-    <option name="LAST_COMMIT_MESSAGE" value="commodities screen tab color" />
+    <MESSAGE value="equities card sizing" />
+    <option name="LAST_COMMIT_MESSAGE" value="equities card sizing" />
   </component>
   <component name="WindowStateProjectService">
     <state x="-1824" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1624382244340">

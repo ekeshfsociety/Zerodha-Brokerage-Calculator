@@ -126,7 +126,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'STRIKE PRICE',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -164,7 +164,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'BUY',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -202,7 +202,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'SELL',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -240,7 +240,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'QUANTITY',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -283,7 +283,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'BUY',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -321,7 +321,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'SELL',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -359,7 +359,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                       gapPadding: 2,
                                     ),
                                     labelText: 'QUANTITY',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(10.1)),
                                   ),
                                 ),
                               ),
@@ -391,7 +391,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
                           onValueChanged: (newValue) {
                             setState(() {
                               _sliding = newValue;
-                              (newValue == 0)
+                               (newValue == 0)
                                   ? (isNse = true)
                                   : (isNse = false);
                             });
