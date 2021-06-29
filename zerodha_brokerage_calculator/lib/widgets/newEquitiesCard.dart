@@ -263,7 +263,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                       MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          width: sx(110),
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _buy,
@@ -293,12 +293,12 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'BUY',
                               labelStyle:
-                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                              TextStyle(color: Colors.black,fontSize: sy(11)),
                             ),
                           ),
                         ),
                         Container(
-                          width: sx(110),
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _sell,
@@ -328,12 +328,12 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'SELL',
                               labelStyle:
-                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                              TextStyle(color: Colors.black,fontSize: sy(11)),
                             ),
                           ),
                         ),
                         Container(
-                          width: sx(110),
+                          width: sx(115),
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _quantity,
@@ -363,7 +363,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
                               ),
                               labelText: 'QUANTITY',
                               labelStyle:
-                              TextStyle(color: Colors.black,fontSize: sy(10.1)),
+                              TextStyle(color: Colors.black,fontSize: sy(11)),
                             ),
                           ),
                         ),
