@@ -65,12 +65,10 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
   @override
   void initState() {
     super.initState();
-    _buy = new TextEditingController(
-        text: (widget.isFutures) ? "110" : "1");
-    _sell = new TextEditingController(
-        text: (widget.isFutures) ? "112" : "2");
-    _strikePrice = new TextEditingController(
-        text: (widget.isFutures) ? "112" : "2");
+    _buy = new TextEditingController(text: (widget.isFutures) ? "110" : "1");
+    _sell = new TextEditingController(text: (widget.isFutures) ? "112" : "2");
+    _strikePrice =
+        new TextEditingController(text: (widget.isFutures) ? "112" : "2");
     buy = double.parse(_buy.text);
     sell = double.parse(_sell.text);
     quantity = int.parse(_quantity.text);
@@ -130,24 +128,31 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             : optionsCommodityChoose,
                         onChanged: (newValue) {
                           setState(() {
-                            if(widget.key == Key('1'))
-                              {
-                                futureCommodityChoose = newValue;
-                                _buy.text = commodityBuySellMap[futureCommodityChoose].split(',')[0];
-                                buy = double.parse(_buy.text);
-                                _sell.text = commodityBuySellMap[futureCommodityChoose].split(',')[1];
-                                sell = double.parse(_sell.text);
-                              }
-                            else
-                              {
-                                optionsCommodityChoose = newValue;
-                                _buy.text = commodityBuySellMap[optionsCommodityChoose].split(',')[0];
-                                buy = double.parse(_buy.text);
-                                _sell.text = commodityBuySellMap[optionsCommodityChoose].split(',')[1];
-                                sell = double.parse(_sell.text);
-                                _strikePrice.text = commodityStrikeMap[optionsCommodityChoose].split(',')[0];
-                                strikePrice = double.parse(_strikePrice.text);
-                              }
+                            if (widget.key == Key('1')) {
+                              futureCommodityChoose = newValue;
+                              _buy.text =
+                                  commodityBuySellMap[futureCommodityChoose]
+                                      .split(',')[0];
+                              buy = double.parse(_buy.text);
+                              _sell.text =
+                                  commodityBuySellMap[futureCommodityChoose]
+                                      .split(',')[1];
+                              sell = double.parse(_sell.text);
+                            } else {
+                              optionsCommodityChoose = newValue;
+                              _buy.text =
+                                  commodityBuySellMap[optionsCommodityChoose]
+                                      .split(',')[0];
+                              buy = double.parse(_buy.text);
+                              _sell.text =
+                                  commodityBuySellMap[optionsCommodityChoose]
+                                      .split(',')[1];
+                              sell = double.parse(_sell.text);
+                              _strikePrice.text =
+                                  commodityStrikeMap[optionsCommodityChoose]
+                                      .split(',')[0];
+                              strikePrice = double.parse(_strikePrice.text);
+                            }
                           });
                         },
                         items: (widget.key == Key('1'))
@@ -180,19 +185,19 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                             gapPadding: 2,
                           ),
                           labelText: 'COMMODITY',
-                          labelStyle: TextStyle(color: Colors.black),
+                          labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
                         ),
                       ),
                     ),
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: sy(10)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        !(widget.key == Key('1'))
-                            ? Container(
-                          width: sx(115),
+                    child: !(widget.key == Key('1'))
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: sx(115),
                                 child: TextFormField(
                                   keyboardType: TextInputType.numberWithOptions(
                                       decimal: true),
@@ -223,173 +228,315 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                                       ),
                                     ),
                                     border: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(sy(10)),
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
                                       borderSide: BorderSide(
                                         color: Colors.black,
                                       ),
                                       gapPadding: 2,
                                     ),
                                     labelText: 'STRIKE PRICE',
-                                    labelStyle: TextStyle(color: Colors.black),
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
                                   ),
                                 ),
-                              )
-                            : Container(),
-                        Container(
-                          width: sx(115),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            // onChanged: (text) {
-                            //   _buy = TextEditingController(text: text);
-                            //   buy = double.parse(_buy.text);
-                            // },
-                            textInputAction: TextInputAction.next,
-                            onEditingComplete: () => node.nextFocus(),
-                            controller: _buy,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                              ),
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  // onChanged: (text) {
+                                  //   _buy = TextEditingController(text: text);
+                                  //   buy = double.parse(_buy.text);
+                                  // },
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
+                                  controller: _buy,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'BUY',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
                                 ),
                               ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  // onChanged: (text) {
+                                  //   _sell = TextEditingController(text: text);
+                                  //   sell = double.parse(_sell.text);
+                                  // },
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
+                                  controller: _sell,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'SELL',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
                                 ),
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  // onChanged: (text) {
+                                  //   _quantity = TextEditingController(text: text);
+                                  //   quantity = int.parse(_quantity.text);
+                                  // },
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.unfocus(),
+                                  controller: _quantity,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'QUANTITY',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
                                 ),
-                                gapPadding: 2,
                               ),
-                              labelText: 'BUY',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
+                            ],
+                          )
+                        : Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
+                                  controller: _buy,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'BUY',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
+                                  controller: _sell,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'SELL',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: sx(115),
+                                child: TextFormField(
+                                  keyboardType: TextInputType.numberWithOptions(
+                                      decimal: true),
+                                  inputFormatters: [
+                                    new FilteringTextInputFormatter.allow(
+                                        RegExp(r"[0-9.]")),
+                                  ],
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.unfocus(),
+                                  controller: _quantity,
+                                  obscureText: false,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    contentPadding: EdgeInsets.all(sy(10.0)),
+                                    focusColor: Colors.black,
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(sy(10)),
+                                      borderSide: BorderSide(
+                                        color: Colors.black,
+                                      ),
+                                      gapPadding: 2,
+                                    ),
+                                    labelText: 'QUANTITY',
+                                    labelStyle: TextStyle(color: Colors.black,fontSize: sy(11)),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Container(
-                          width: sx(115),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            // onChanged: (text) {
-                            //   _sell = TextEditingController(text: text);
-                            //   sell = double.parse(_sell.text);
-                            // },
-                            textInputAction: TextInputAction.next,
-                            onEditingComplete: () => node.nextFocus(),
-                            controller: _sell,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                gapPadding: 2,
-                              ),
-                              labelText: 'SELL',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          width: sx(115),
-                          child: TextFormField(
-                            keyboardType: TextInputType.numberWithOptions(decimal: true),
-                            inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
-                            // onChanged: (text) {
-                            //   _quantity = TextEditingController(text: text);
-                            //   quantity = int.parse(_quantity.text);
-                            // },
-                            textInputAction: TextInputAction.next,
-                            onEditingComplete: () => node.unfocus(),
-                            controller: _quantity,
-                            obscureText: false,
-                            style: TextStyle(color: Colors.black),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.all(sy(10.0)),
-                              focusColor: Colors.black,
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(sy(10)),
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
-                                gapPadding: 2,
-                              ),
-                              labelText: 'QUANTITY',
-                              labelStyle: TextStyle(color: Colors.black),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
                   SizedBox(height: sy(13)),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: sx(65), vertical: sy(0)),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: sx(65), vertical: sy(0)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Net P&L",
-                          style: TextStyle(color: Colors.black, fontSize: sy(22)),
+                          style:
+                              TextStyle(color: Colors.black, fontSize: sy(22)),
                         ),
                         Text(
                           ((widget.key == Key('1'))
-                              ? FuturesCommodities.netProfit(buy, quantity,
-                              sell, futureCommodityChoose)
-                              : OptionsCommodities.netProfit(
-                              buy,
-                              quantity,
-                              sell,
-                              optionsCommodityChoose,
-                              strikePrice))
+                                  ? FuturesCommodities.netProfit(buy, quantity,
+                                      sell, futureCommodityChoose)
+                                  : OptionsCommodities.netProfit(
+                                      buy,
+                                      quantity,
+                                      sell,
+                                      optionsCommodityChoose,
+                                      strikePrice))
                               .toString(),
                           style: TextStyle(
                               color: (widget.isFutures
-                                  ? FuturesCommodities.netProfit(
-                                  buy,
-                                  quantity,
-                                  sell,
-                                  futureCommodityChoose)
-                                  : OptionsCommodities.netProfit(
-                                  buy,
-                                  quantity,
-                                  sell,
-                                  optionsCommodityChoose,
-                                  strikePrice)) >=
-                                  0
+                                          ? FuturesCommodities.netProfit(
+                                              buy,
+                                              quantity,
+                                              sell,
+                                              futureCommodityChoose)
+                                          : OptionsCommodities.netProfit(
+                                              buy,
+                                              quantity,
+                                              sell,
+                                              optionsCommodityChoose,
+                                              strikePrice)) >=
+                                      0
                                   ? Colors.greenAccent
                                   : Colors.redAccent,
                               fontSize: sy(20)),
@@ -406,9 +553,9 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                       name: 'Points to Breakeven',
                       value: (widget.key == Key('1'))
                           ? FuturesCommodities.pointsToBreakeven(
-                          buy, quantity, sell, futureCommodityChoose)
+                              buy, quantity, sell, futureCommodityChoose)
                           : OptionsCommodities.pointsToBreakeven(buy, quantity,
-                          sell, optionsCommodityChoose, strikePrice),
+                              sell, optionsCommodityChoose, strikePrice),
                     ),
                   ),
                   Padding(
@@ -467,9 +614,9 @@ class _CommoditiesCardState extends State<CommoditiesCard> {
                       name: 'CTT',
                       value: (widget.key == Key('1'))
                           ? FuturesCommodities.ctt(
-                          buy, quantity, sell, futureCommodityChoose)
+                              buy, quantity, sell, futureCommodityChoose)
                           : OptionsCommodities.ctt(buy, quantity, sell,
-                          optionsCommodityChoose, strikePrice),
+                              optionsCommodityChoose, strikePrice),
                     ),
                   ),
                   Padding(
