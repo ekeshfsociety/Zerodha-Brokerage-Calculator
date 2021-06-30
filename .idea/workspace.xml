@@ -22,16 +22,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="refactoring">
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/futuresCommodities.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/calculations/optionsCommodities.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/utils/colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/constants.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/globals.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/utils/globals.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/category_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/category_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/currecncyCard.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/equitiesCard.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCommoditiesCard.dart" afterDir="false" />
+    <list default="true" id="36bf1e09-dd19-43cc-bca0-df252ef7cb87" name="Default Changelist" comment="Bug Fixes #11">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newCurrencyCard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/zerodha_brokerage_calculator/lib/widgets/newEquitiesCard.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,11 +431,11 @@
     </state>
     <state x="185" y="130" key="RollbackChangesDialog/0.25.1440.799@0.25.1440.799" timestamp="1624968084678" />
     <state x="185" y="130" key="RollbackChangesDialog/0.25.1440.801@0.25.1440.801" timestamp="1624973021828" />
-    <state x="213" y="0" key="SettingsEditor" timestamp="1624822257406">
+    <state x="213" y="0" key="SettingsEditor" timestamp="1625083555428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1778" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@-1920.0.1280.680" timestamp="1624382243748" />
-    <state x="213" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1624822257406" />
+    <state x="213" y="0" key="SettingsEditor/-1920.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1625083555428" />
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@0.0.1280.680" timestamp="1623711549511" />
     <state x="3093" y="0" key="SettingsEditor/0.0.1280.680/2880.0.1920.1040@2880.0.1920.1040" timestamp="1623752888437" />
     <state x="415" y="197" key="Vcs.Push.Dialog.v2" timestamp="1624983487621">

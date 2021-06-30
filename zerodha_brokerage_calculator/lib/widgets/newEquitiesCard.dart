@@ -236,6 +236,7 @@ class _EquitiesCardState extends State<EquitiesCard> {
 
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
     return RelativeBuilder(
         key: widget.key,
         builder: (context, height, width, sy, sx) {
@@ -267,6 +268,8 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _buy,
+                            textInputAction: TextInputAction.next,
+                            onEditingComplete: () => node.nextFocus(),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
@@ -302,6 +305,8 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _sell,
+                            textInputAction: TextInputAction.next,
+                            onEditingComplete: () => node.nextFocus(),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),
@@ -337,6 +342,8 @@ class _EquitiesCardState extends State<EquitiesCard> {
                           child: TextFormField(
                             keyboardType: TextInputType.numberWithOptions(decimal: true),
                             controller: _quantity,
+                            textInputAction: TextInputAction.next,
+                            onEditingComplete: () => node.unfocus(),
                             inputFormatters: [new FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")),],
                             obscureText: false,
                             style: TextStyle(color: Colors.black),

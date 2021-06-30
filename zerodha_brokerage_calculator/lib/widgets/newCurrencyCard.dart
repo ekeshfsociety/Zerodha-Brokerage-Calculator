@@ -66,6 +66,7 @@ class _CurrencyCardState extends State<CurrencyCard> {
 
   @override
   Widget build(BuildContext context) {
+    final node = FocusScope.of(context);
     return RelativeBuilder(
         key: widget.key,
         builder: (context, height, width, sy, sx) {
@@ -102,6 +103,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _strikePrice,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -140,6 +143,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _buy,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -178,6 +183,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _sell,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -216,6 +223,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _quantity,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.unfocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -259,6 +268,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _buy,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -297,6 +308,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _sell,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.nextFocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
@@ -335,6 +348,8 @@ class _CurrencyCardState extends State<CurrencyCard> {
                                         RegExp(r"[0-9.]")),
                                   ],
                                   controller: _quantity,
+                                  textInputAction: TextInputAction.next,
+                                  onEditingComplete: () => node.unfocus(),
                                   obscureText: false,
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
